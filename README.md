@@ -33,8 +33,7 @@
         <option value="quiz-grade10.html">Grade 10</option>
       </select>
     </div>
-
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade X Arithmetic Quiz</h2>
+     <h2 class="text-3xl text-center text-orange-500 mb-6">Grade X Arithmetic Quiz</h2>
     <form id="quizForm" class="space-y-6">
       <!-- Replace these with grade-specific questions -->
       <div>
