@@ -86,7 +86,7 @@
         q4: "A",
         q5: "C"
       };
-      let score = 0;
+      let score = 5;
       const form = document.forms["quizForm"];
       for (const key in correctAnswers) {
         if (form[key]?.value === correctAnswers[key]) {
