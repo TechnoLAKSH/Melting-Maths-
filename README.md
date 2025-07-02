@@ -29,9 +29,7 @@ Arithmetic learning site for Grades 1–10
       </nav>
     </div>
   </header>
-
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-   <h2 class="text-3xl text-center text-orange-500 mb-6
+GRADE 1 ARTHMATIC QUIZ
     <form id="quizForm" class="space-y-6">
       <div>
         <p class="font-semibold">1. What is 8 + 6?</p>
@@ -88,7 +86,7 @@ Arithmetic learning site for Grades 1–10
         q5: "100"
       };
 
-      let score = 0;
+      let score = 5;
       const form = document.forms["quizForm"];
       for (const key in correctAnswers) {
         if (form[key].value === correctAnswers[key]) {
@@ -106,6 +104,98 @@ Arithmetic learning site for Grades 1–10
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 2 Quiz – Mealting Maths</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+  <header class="bg-orange-400 p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
+      <nav class="space-x-4 text-white">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto mt-10 p-4">
+    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 2 Arithmetic Quiz</h2>
+
+    <form id="quizForm" class="space-y-6">
+      <div>
+        <p class="font-semibold">1. What is 6 + 7?</p>
+        <input type="radio" name="q1" value="12"> 12<br />
+        <input type="radio" name="q1" value="13"> 13<br />
+        <input type="radio" name="q1" value="14"> 14
+      </div>
+
+      <div>
+        <p class="font-semibold">2. What is 15 - 8?</p>
+        <input type="radio" name="q2" value="6"> 6<br />
+        <input type="radio" name="q2" value="7"> 7<br />
+        <input type="radio" name="q2" value="8"> 8
+      </div>
+
+      <div>
+        <p class="font-semibold">3. What number comes after 49?</p>
+        <input type="radio" name="q3" value="48"> 48<br />
+        <input type="radio" name="q3" value="50"> 50<br />
+        <input type="radio" name="q3" value="51"> 51
+      </div>
+
+      <div>
+        <p class="font-semibold">4. What is 5 × 2?</p>
+        <input type="radio" name="q4" value="10"> 10<br />
+        <input type="radio" name="q4" value="7"> 7<br />
+        <input type="radio" name="q4" value="12"> 12
+      </div>
+
+      <div>
+        <p class="font-semibold">5. What is 20 ÷ 5?</p>
+        <input type="radio" name="q5" value="3"> 3<br />
+        <input type="radio" name="q5" value="4"> 4<br />
+        <input type="radio" name="q5" value="5"> 5
+      </div>
+
+      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+    </form>
+
+    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
+  </main>
+
+  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
+  </footer>
+
+  <script>
+    function submitQuiz() {
+      const correctAnswers = {
+        q1: "13",
+        q2: "7",
+        q3: "50",
+        q4: "10",
+        q5: "4"
+      };
+
+      let score = 0;
+      const form = document.forms["quizForm"];
+      for (const key in correctAnswers) {
+        if (form[key].value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").textContent = `You scored ${score}/5!`;
+    }
+  </script>
+</body>
+</html>
+
   <title>Grade 5 Quiz – Mealting Maths</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -179,7 +269,7 @@ Arithmetic learning site for Grades 1–10
         q5: "3"
       };
 
-      let score = 0;
+      let score = 5;
       const form = document.forms["quizForm"];
       for (const key in correctAnswers) {
         if (form[key].value === correctAnswers[key]) {
