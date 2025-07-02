@@ -3,12 +3,13 @@ Arithmetic learning site for Grades 1–10
 <section class="bg-orange-100 py-6 mt-10">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-2xl text-orange-600 font-bold">👤 Co-Founder</h2>
-    <p class="text-xl mt-2 text-gray-800">Laksh Agarwal</p>
+    <p class="text-xl mt-2 text-gray-800">Laksh Agarwal X chat gpt </p>
   </div>
 </section>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grade 3 Quiz – Mealting Maths</title>
@@ -650,3 +651,280 @@ GRADE 1 ARTHMATIC QUIZ
   </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 8 Quiz – Mealting Maths</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+  <header class="bg-orange-400 p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
+      <nav class="space-x-4 text-white">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto mt-10 p-4">
+    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 8 Arithmetic Quiz – Tough</h2>
+
+    <form id="quizForm" class="space-y-6">
+      <div>
+        <p class="font-semibold">1. Evaluate: (−12 + 5) × (−3)</p>
+        <input type="radio" name="q1" value="−21"> −21<br />
+        <input type="radio" name="q1" value="−27"> −27<br />
+        <input type="radio" name="q1" value="−36"> −36
+      </div>
+
+      <div>
+        <p class="font-semibold">2. If x = 4 and y = −2, what is the value of: x² − y³?</p>
+        <input type="radio" name="q2" value="24"> 24<br />
+        <input type="radio" name="q2" value="8"> 8<br />
+        <input type="radio" name="q2" value="32"> 32
+      </div>
+
+      <div>
+        <p class="font-semibold">3. What is the reciprocal of −5/6?</p>
+        <input type="radio" name="q3" value="−6/5"> −6/5<br />
+        <input type="radio" name="q3" value="5/6"> 5/6<br />
+        <input type="radio" name="q3" value="−5/6"> −5/6
+      </div>
+
+      <div>
+        <p class="font-semibold">4. If the original price of a jacket is ₹1200 and it is increased by 15%, what is the new price?</p>
+        <input type="radio" name="q4" value="₹1380"> ₹1380<br />
+        <input type="radio" name="q4" value="₹1350"> ₹1350<br />
+        <input type="radio" name="q4" value="₹1320"> ₹1320
+      </div>
+
+      <div>
+        <p class="font-semibold">5. Simplify: 3a − 2b + 4a + b</p>
+        <input type="radio" name="q5" value="7a − b"> 7a − b<br />
+        <input type="radio" name="q5" value="6a + 3b"> 6a + 3b<br />
+        <input type="radio" name="q5" value="7a − 3b"> 7a − 3b
+      </div>
+
+      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+    </form>
+
+    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
+  </main>
+
+  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
+  </footer>
+
+  <script>
+    function submitQuiz() {
+      const correctAnswers = {
+        q1: "−21",
+        q2: "32",
+        q3: "−6/5",
+        q4: "₹1380",
+        q5: "7a − b"
+      };
+
+      let score = 0;
+      const form = document.forms["quizForm"];
+      for (const key in correctAnswers) {
+        if (form[key].value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 9 Quiz – Mealting Maths</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+  <header class="bg-orange-400 p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
+      <nav class="space-x-4 text-white">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto mt-10 p-4">
+    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 9 Arithmetic Quiz – Advanced</h2>
+
+    <form id="quizForm" class="space-y-6">
+      <div>
+        <p class="font-semibold">1. Simplify: 3² × 2³ − 4</p>
+        <input type="radio" name="q1" value="68"> 68<br />
+        <input type="radio" name="q1" value="20"> 20<br />
+        <input type="radio" name="q1" value="68"> 68
+      </div>
+
+      <div>
+        <p class="font-semibold">2. Solve: If 5x − 3 = 2x + 12, what is x?</p>
+        <input type="radio" name="q2" value="5"> 5<br />
+        <input type="radio" name="q2" value="6"> 6<br />
+        <input type="radio" name="q2" value="7"> 7
+      </div>
+
+      <div>
+        <p class="font-semibold">3. Find the value of: (3/4 ÷ 1/2) + (2/5 × 3/8)</p>
+        <input type="radio" name="q3" value="2.3"> 2.3<br />
+        <input type="radio" name="q3" value="2.05"> 2.05<br />
+        <input type="radio" name="q3" value="2.1"> 2.1
+      </div>
+
+      <div>
+        <p class="font-semibold">4. A number is increased by 30% and then decreased by 20%. What is the net percentage change?</p>
+        <input type="radio" name="q4" value="4% increase"> 4% increase<br />
+        <input type="radio" name="q4" value="10% increase"> 10% increase<br />
+        <input type="radio" name="q4" value="4% decrease"> 4% decrease
+      </div>
+
+      <div>
+        <p class="font-semibold">5. If (x − 3)(x + 5) = 0, what are the roots?</p>
+        <input type="radio" name="q5" value="x = −5, 3"> x = −5, 3<br />
+        <input type="radio" name="q5" value="x = 5, 3"> x = 5, 3<br />
+        <input type="radio" name="q5" value="x = −3, 5"> x = −3, 5
+      </div>
+
+      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+    </form>
+
+    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
+  </main>
+
+  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
+  </footer>
+
+  <script>
+    function submitQuiz() {
+      const correctAnswers = {
+        q1: "68",
+        q2: "5",
+        q3: "2.3",
+        q4: "4% increase",
+        q5: "x = −5, 3"
+      };
+
+      let score = 0;
+      const form = document.forms["quizForm"];
+      for (const key in correctAnswers) {
+        if (form[key].value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").textContent = `You scored ${score}/5!`;
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 10 Quiz – Mealting Maths</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+  <header class="bg-orange-400 p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
+      <nav class="space-x-4 text-white">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto mt-10 p-4">
+    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 10 Arithmetic Quiz – Advanced</h2>
+
+    <form id="quizForm" class="space-y-6">
+      <div>
+        <p class="font-semibold">1. Factorize: x² − 7x + 12</p>
+        <input type="radio" name="q1" value="(x − 3)(x − 4)"> (x − 3)(x − 4)<br />
+        <input type="radio" name="q1" value="(x + 3)(x − 4)"> (x + 3)(x − 4)<br />
+        <input type="radio" name="q1" value="(x − 6)(x − 1)"> (x − 6)(x − 1)
+      </div>
+
+      <div>
+        <p class="font-semibold">2. Solve: 3/(x+1) = 1/2</p>
+        <input type="radio" name="q2" value="x = 5"> x = 5<br />
+        <input type="radio" name="q2" value="x = 6"> x = 6<br />
+        <input type="radio" name="q2" value="x = 3"> x = 3
+      </div>
+
+      <div>
+        <p class="font-semibold">3. If the mean of 6 numbers is 12, what is their total sum?</p>
+        <input type="radio" name="q3" value="60"> 60<br />
+        <input type="radio" name="q3" value="72"> 72<br />
+        <input type="radio" name="q3" value="66"> 66
+      </div>
+
+      <div>
+        <p class="font-semibold">4. Simplify: (2x²y × 3xy²)</p>
+        <input type="radio" name="q4" value="6x³y³"> 6x³y³<br />
+        <input type="radio" name="q4" value="5x²y²"> 5x²y²<br />
+        <input type="radio" name="q4" value="6x²y³"> 6x²y³
+      </div>
+
+      <div>
+        <p class="font-semibold">5. Find the value of x: √(x + 9) = 5</p>
+        <input type="radio" name="q5" value="x = 16"> x = 16<br />
+        <input type="radio" name="q5" value="x = 25"> x = 25<br />
+        <input type="radio" name="q5" value="x = 30"> x = 30
+      </div>
+
+      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+    </form>
+
+    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
+  </main>
+
+  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
+  </footer>
+
+  <script>
+    function submitQuiz() {
+      const correctAnswers = {
+        q1: "(x − 3)(x − 4)",
+        q2: "x = 5",
+        q3: "72",
+        q4: "6x³y³",
+        q5: "x = 16"
+      };
+
+      let score = 0;
+      const form = document.forms["quizForm"];
+      for (const key in correctAnswers) {
+        if (form[key].value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").textContent = `You scored ${score}/5!`;
+    }
+  </script>
+</body>
+</html>
+
+      document.getElementById("result").textContent = `You scored ${score}/5!`;
+    }
+  </script>
+</body>
+</html>
+
