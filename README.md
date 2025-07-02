@@ -1,4 +1,11 @@
 # Melting-Maths-
+<section class="bg-orange-100 py-6 mt-10">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl text-orange-600 font-bold">👤 Co-Founder</h2>
+    <p class="text-xl mt-2 text-gray-800">Laksh Agarwal</p>
+  </div>
+</section>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -105,7 +112,7 @@ Arithmetic learning site for Grades 1–10
 <section class="bg-orange-100 py-6 mt-10">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-2xl text-orange-600 font-bold">👤 Co-Founder</h2>
-    <p class="text-xl mt-2 text-gray-800">Laksh Agarwal X chat gpt </p>
+    <p class="text-xl mt-2 text-gray-800">Laksh Agarwal </p>
   </div>
 </section>
 <!DOCTYPE html>
