@@ -1,6 +1,5 @@
 # Melting-Maths-
 Arithmetic learning site for Grades 1–10
-Always show details
 <section class="bg-orange-100 py-6 mt-10">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-2xl text-orange-600 font-bold">👤 Co-Founder</h2>
@@ -32,8 +31,7 @@ Always show details
   </header>
 
   <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 3 Arithmetic Quiz</h2>
-
+   <h2 class="text-3xl text-center text-orange-500 mb-6
     <form id="quizForm" class="space-y-6">
       <div>
         <p class="font-semibold">1. What is 8 + 6?</p>
