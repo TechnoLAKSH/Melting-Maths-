@@ -472,7 +472,7 @@ GRADE 1 ARTHMATIC QUIZ
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 6 Quiz – Mealting Maths</title>
+  <title>Grade 6 Tough Quiz – Mealting Maths</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-blue-50 text-gray-800">
@@ -487,42 +487,42 @@ GRADE 1 ARTHMATIC QUIZ
   </header>
 
   <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 6 Arithmetic Quiz</h2>
+    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 6 Arithmetic Quiz – Tough</h2>
 
     <form id="quizForm" class="space-y-6">
       <div>
-        <p class="font-semibold">1. What is 1,234 + 789?</p>
-        <input type="radio" name="q1" value="2003"> 2003<br />
-        <input type="radio" name="q1" value="2023"> 2023<br />
-        <input type="radio" name="q1" value="2024"> 2024
+        <p class="font-semibold">1. What is the least common multiple (LCM) of 8, 12, and 18?</p>
+        <input type="radio" name="q1" value="72"> 72<br />
+        <input type="radio" name="q1" value="36"> 36<br />
+        <input type="radio" name="q1" value="144"> 144
       </div>
 
       <div>
-        <p class="font-semibold">2. What is 3,000 − 1,458?</p>
-        <input type="radio" name="q2" value="1542"> 1542<br />
-        <input type="radio" name="q2" value="1452"> 1452<br />
-        <input type="radio" name="q2" value="1442"> 1442
+        <p class="font-semibold">2. What is (144 ÷ 6) × (5 + 7) − 24?</p>
+        <input type="radio" name="q2" value="240"> 240<br />
+        <input type="radio" name="q2" value="264"> 264<br />
+        <input type="radio" name="q2" value="252"> 252
       </div>
 
       <div>
-        <p class="font-semibold">3. What is 45 × 6?</p>
-        <input type="radio" name="q3" value="260"> 260<br />
-        <input type="radio" name="q3" value="270"> 270<br />
-        <input type="radio" name="q3" value="280"> 280
+        <p class="font-semibold">3. A train travels 96 km in 3 hours. At the same speed, how far will it travel in 5.5 hours?</p>
+        <input type="radio" name="q3" value="160"> 160 km<br />
+        <input type="radio" name="q3" value="176"> 176 km<br />
+        <input type="radio" name="q3" value="180"> 180 km
       </div>
 
       <div>
-        <p class="font-semibold">4. What is 225 ÷ 5?</p>
-        <input type="radio" name="q4" value="45"> 45<br />
-        <input type="radio" name="q4" value="55"> 55<br />
-        <input type="radio" name="q4" value="65"> 65
+        <p class="font-semibold">4. Which of the following numbers is divisible by both 3 and 4?</p>
+        <input type="radio" name="q4" value="126"> 126<br />
+        <input type="radio" name="q4" value="132"> 132<br />
+        <input type="radio" name="q4" value="138"> 138
       </div>
 
       <div>
-        <p class="font-semibold">5. A box has 6 rows with 8 pencils in each. If 12 pencils are removed, how many are left?</p>
-        <input type="radio" name="q5" value="48"> 48<br />
-        <input type="radio" name="q5" value="36"> 36<br />
-        <input type="radio" name="q5" value="42"> 42
+        <p class="font-semibold">5. A basket has 48 mangoes. If 25% get spoiled and the rest are equally packed into 5 boxes, how many mangoes are in each box?</p>
+        <input type="radio" name="q5" value="6"> 6<br />
+        <input type="radio" name="q5" value="7"> 7<br />
+        <input type="radio" name="q5" value="8"> 8
       </div>
 
       <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
@@ -538,11 +538,103 @@ GRADE 1 ARTHMATIC QUIZ
   <script>
     function submitQuiz() {
       const correctAnswers = {
-        q1: "2023",
-        q2: "1542",
-        q3: "270",
-        q4: "45",
-        q5: "36"
+        q1: "72",
+        q2: "252",
+        q3: "176",
+        q4: "132",
+        q5: "8"
+      };
+
+      let score = 0;
+      const form = document.forms["quizForm"];
+      for (const key in correctAnswers) {
+        if (form[key].value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").textContent = `You scored ${score}/5!`;
+    }
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 7 Quiz – Mealting Maths</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 text-gray-800">
+  <header class="bg-orange-400 p-4 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
+      <nav class="space-x-4 text-white">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto mt-10 p-4">
+    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 7 Arithmetic Quiz – Challenging</h2>
+
+    <form id="quizForm" class="space-y-6">
+      <div>
+        <p class="font-semibold">1. What is the value of (84 ÷ 6) + (13 × 4) − 5?</p>
+        <input type="radio" name="q1" value="55"> 55<br />
+        <input type="radio" name="q1" value="60"> 60<br />
+        <input type="radio" name="q1" value="61"> 61
+      </div>
+
+      <div>
+        <p class="font-semibold">2. If A = 2 and B = 3, what is the value of (A + B)² − (B − A)²?</p>
+        <input type="radio" name="q2" value="28"> 28<br />
+        <input type="radio" name="q2" value="20"> 20<br />
+        <input type="radio" name="q2" value="16"> 16
+      </div>
+
+      <div>
+        <p class="font-semibold">3. What is the smallest number divisible by 12, 15, and 18?</p>
+        <input type="radio" name="q3" value="180"> 180<br />
+        <input type="radio" name="q3" value="90"> 90<br />
+        <input type="radio" name="q3" value="60"> 60
+      </div>
+
+      <div>
+        <p class="font-semibold">4. Find the value of: 144 − 48 ÷ 4 × 3</p>
+        <input type="radio" name="q4" value="108"> 108<br />
+        <input type="radio" name="q4" value="111"> 111<br />
+        <input type="radio" name="q4" value="120"> 120
+      </div>
+
+      <div>
+        <p class="font-semibold">5. A number is increased by 20% and then decreased by 25%. What is the net change?</p>
+        <input type="radio" name="q5" value="5% decrease"> 5% decrease<br />
+        <input type="radio" name="q5" value="10% decrease"> 10% decrease<br />
+        <input type="radio" name="q5" value="No change"> No change
+      </div>
+
+      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+    </form>
+
+    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
+  </main>
+
+  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
+  </footer>
+
+  <script>
+    function submitQuiz() {
+      const correctAnswers = {
+        q1: "60",
+        q2: "28",
+        q3: "180",
+        q4: "111",
+        q5: "10% decrease"
       };
 
       let score = 0;
