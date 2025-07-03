@@ -1,6 +1,5 @@
 <div class="text-center mt-12">
-  <img src="[media pointer="file-service://file-CpyKm4SxCu7G2gtanJfrw9"]" alt="Laksh Agarwal - Co-Founder" class="w-40 h-40 rounded-full mx-auto shadow-lg object-cover" />
-  <h2 class="mt-4 text-xl font-bold text-gray-800">Laksh Agarwal</h2>
+  <img src="[media pointer="file-service://file-CpyKm4SxCu7G2gtanJfrw9"]" alt="Laksh Agarwal - Co-Founder" 
   <p class="text-gray-500">Co-Founder, Mealting Maths</p>
 </div>
 
@@ -53,7 +52,6 @@
       <div class="cartoon-frame">
        <div class="text-center mt-12">
   <img src="! alt="Laksh Agarwal - Co-Founder" 
-  <h2 class="mt-4 text-xl font-bold text-gray-800">Laksh Agarwal</h2>
   <p class="text-gray-500">Co-Founder, Mealting Maths</p>
 </div>
       <p class="mt-4 text-xl font-semibold text-gray-700">Laksh Agarwal<br>
@@ -61,7 +59,7 @@
       </p>
     </div>
   </main>
-
+[media pointer="file-service://file-CpyKm4SxCu7G2gtanJfrw9"]
   <footer class="bg-orange-400 text-white text-center py-4 mt-10">
     <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
   </footer>
