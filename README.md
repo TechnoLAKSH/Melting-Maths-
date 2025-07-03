@@ -50,7 +50,7 @@ MELTING MATHS
       </select>
     </div>
 
-![Laksh HTML - Copy (2)](https://github.com/user-attachments/assets/dc7059b1-8453-4145-bf95-60ccb6a83159)
+![Laksh HTML - Copy (2)]
 <div class="text-center mt-12">
       <div class="cartoon-frame">
         <img src="laksh.jpg" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
