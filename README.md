@@ -50,10 +50,9 @@ MELTING MATHS
       </select>
     </div>
 
-![Laksh HTML - Copy (2)]
 <div class="text-center mt-12">
       <div class="cartoon-frame">
-        <img src="laksh.jpg" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
+        <img src="[Laksh HTML - Copy (2)]" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
       </div>
       <p class="mt-4 text-xl font-semibold text-gray-700">Laksh Agarwal<br>
         <span class="text-sm text-gray-500">Co-Founder</span>
