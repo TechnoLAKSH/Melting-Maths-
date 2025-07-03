@@ -1,7 +1,3 @@
-<div class="text-center mt-12">
-  <img src="[media pointer="file-service://file-CpyKm4SxCu7G2gtanJfrw9"]" alt="Laksh Agarwal - Co-Founder" 
-  <p class="text-gray-500">Co-Founder, Mealting Maths</p>
-</div>
 
  LAKSH AGARWAL CO FOUNDER OF MELTING MATHS 
  <style>
