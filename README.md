@@ -1,12 +1,6 @@
-)MELTING MATHS 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mealting Maths – Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+[Laksh HTML](https://github.com/user-attachments/assets/3cf9733b-b337-4075-a904-149f3bb44c78)
+ LAKSH AGARWAL CO FOUNDER OF MELTING MATHS 
+ <style>
     .cartoon-frame {
       border: 8px dashed #ff9800;
       padding: 10px;
@@ -53,7 +47,7 @@
 <div class="text-center mt-12">
       <div class="cartoon-frame">
        <div class="text-center mt-12">
-  <img src="![Laksh HTML](https://github.com/user-attachments/assets/3cf9733b-b337-4075-a904-149f3bb44c78 alt="Laksh Agarwal - Co-Founder" class="w-40 h-40 rounded-full mx-auto shadow-lg object-cover" />
+  <img src="! alt="Laksh Agarwal - Co-Founder" 
   <h2 class="mt-4 text-xl font-bold text-gray-800">Laksh Agarwal</h2>
   <p class="text-gray-500">Co-Founder, Mealting Maths</p>
 </div>
