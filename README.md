@@ -5,6 +5,7 @@
   <img src="laksh.jpg" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
   <p class="mt-4 text-lg font-semibold text-gray-700">Laksh Agarwal<br><span class="text-sm text-gray-500">Co-Founder</span></p>
 </div>
+    <img src="laksh.jpg" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
     <h2 class="text-2xl text-orange-600 font-bold">👤 Co-Founder</h2>
     <p class="text-xl mt-2 text-gray-800">Laksh Agarwal</p>
   </div>
