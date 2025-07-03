@@ -52,8 +52,11 @@
 
 <div class="text-center mt-12">
       <div class="cartoon-frame">
-        <img src= "![Uploading Laksh.HTML.jpg…]" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
-      </div>
+       <div class="text-center mt-12">
+  <img src="laksh.jpg" alt="Laksh Agarwal - Co-Founder" class="w-40 h-40 rounded-full mx-auto shadow-lg object-cover" />
+  <h2 class="mt-4 text-xl font-bold text-gray-800">Laksh Agarwal</h2>
+  <p class="text-gray-500">Co-Founder, Mealting Maths</p>
+</div>
       <p class="mt-4 text-xl font-semibold text-gray-700">Laksh Agarwal<br>
         <span class="text-sm text-gray-500">Co-Founder</span>
       </p>
