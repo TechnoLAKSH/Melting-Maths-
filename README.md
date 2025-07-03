@@ -2,7 +2,6 @@
 <section class="bg-orange-100 py-6 mt-10">
   <div class="max-w-4xl mx-auto text-center">
     <div class="text-center mt-8">
-  <img src="laksh.jpg" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
   <p class="mt-4 text-lg font-semibold text-gray-700">Laksh Agarwal<br><span class="text-sm text-gray-500">Co-Founder</span></p>
 </div>
     <img src="laksh.jpg" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
