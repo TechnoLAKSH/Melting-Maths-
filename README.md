@@ -1,4 +1,4 @@
-MELTING MATHS 
+![Laksh HTML](https://github.com/user-attachments/assets/3cf9733b-b337-4075-a904-149f3bb44c78)MELTING MATHS 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +52,7 @@ MELTING MATHS
 
 <div class="text-center mt-12">
       <div class="cartoon-frame">
-        <img src="[Laksh HTML - Copy (2)]" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
+        <img src= "![Uploading Laksh.HTML.jpg…]" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
       </div>
       <p class="mt-4 text-xl font-semibold text-gray-700">Laksh Agarwal<br>
         <span class="text-sm text-gray-500">Co-Founder</span>
