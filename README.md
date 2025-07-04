@@ -113,76 +113,111 @@
   </script>
 </body>
 </html>
-GRADE 1 ARTHMATIC QUIZ
-    <form id="quizForm" class="space-y-6">
-      <div>
-        <p class="font-semibold">1. What is 8 + 6?</p>
-        <input type="radio" name="q1" value="12"> 12<br />
-        <input type="radio" name="q1" value="13"> 13<br />
-        <input type="radio" name="q1" value="14"> 14
-      </div>
-
-      <div>
-        <p class="font-semibold">2. What is 24 ÷ 6?</p>
-        <input type="radio" name="q2" value="3"> 3<br />
-        <input type="radio" name="q2" value="4"> 4<br />
-        <input type="radio" name="q2" value="6"> 6
-      </div>
-
-      <div>
-        <p class="font-semibold">3. What is 7 × 3?</p>
-        <input type="radio" name="q3" value="21"> 21<br />
-        <input type="radio" name="q3" value="24"> 24<br />
-        <input type="radio" name="q3" value="18"> 18
-      </div>
-
-      <div>
-        <p class="font-semibold">4. What is the place value of 5 in 352?</p>
-        <input type="radio" name="q4" value="5"> 5<br />
-        <input type="radio" name="q4" value="50"> 50<br />
-        <input type="radio" name="q4" value="500"> 500
-      </div>
-
-      <div>
-        <p class="font-semibold">5. What is the smallest 3-digit number?</p>
-        <input type="radio" name="q5" value="001"> 001<br />
-        <input type="radio" name="q5" value="100"> 100<br />
-        <input type="radio" name="q5" value="101"> 101
-      </div>
-
-      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
-    </form>
-
-    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
-  </main>
-
-  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
-    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
-  </footer>
-
-  <script>
-    function submitQuiz() {
-      const correctAnswers = {
-        q1: "14",
-        q2: "4",
-        q3: "21",
-        q4: "50",
-        q5: "100"
-      };
-
-      let score = 5;
-      const form = document.forms["quizForm"];
-      for (const key in correctAnswers) {
-        if (form[key].value === correctAnswers[key]) {
-          score++;
-        }
-      }
-
-      document.getElementById("result").textContent = `You scored ${score}/5!`;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade 1 Arithmetic Quiz</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', sans-serif;
+      background-color: #fffbe6;
+      color: #333;
+      padding: 20px;
     }
-  </script>
+    h1 {
+      color: #ff6600;
+      text-align: center;
+    }
+    .question {
+      margin: 20px 0;
+      background-color: #f9f3d2;
+      padding: 15px;
+      border-radius: 12px;
+      border: 2px solid #ffd966;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #006600;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Grade 1 Arithmetic Quiz</h1>
+
+<form id="quizForm">
+  <div class="question">
+    <label>1. What is 2 + 3?</label>
+    <input type="radio" name="q1" value="4"> 4<br>
+    <input type="radio" name="q1" value="5"> 5<br>
+    <input type="radio" name="q1" value="6"> 6
+  </div>
+
+  <div class="question">
+    <label>2. What is 7 - 4?</label>
+    <input type="radio" name="q2" value="2"> 2<br>
+    <input type="radio" name="q2" value="3"> 3<br>
+    <input type="radio" name="q2" value="4"> 4
+  </div>
+
+  <div class="question">
+    <label>3. What comes after 8?</label>
+    <input type="radio" name="q3" value="9"> 9<br>
+    <input type="radio" name="q3" value="7"> 7<br>
+    <input type="radio" name="q3" value="6"> 6
+  </div>
+
+  <div class="question">
+    <label>4. What is 5 + 0?</label>
+    <input type="radio" name="q4" value="5"> 5<br>
+    <input type="radio" name="q4" value="0"> 0<br>
+    <input type="radio" name="q4" value="1"> 1
+  </div>
+
+  <div class="question">
+    <label>5. What is 10 - 5?</label>
+    <input type="radio" name="q5" value="4"> 4<br>
+    <input type="radio" name="q5" value="5"> 5<br>
+    <input type="radio" name="q5" value="6"> 6
+  </div>
+
+  <button type="button" onclick="checkAnswers()">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+  function checkAnswers() {
+    let correct = 0;
+    if (document.querySelector('input[name="q1"]:checked')?.value === "5") correct++;
+    if (document.querySelector('input[name="q2"]:checked')?.value === "3") correct++;
+    if (document.querySelector('input[name="q3"]:checked')?.value === "9") correct++;
+    if (document.querySelector('input[name="q4"]:checked')?.value === "5") correct++;
+    if (document.querySelector('input[name="q5"]:checked')?.value === "5") correct++;
+
+    document.getElementById("result").textContent = 
+      "You got " + correct + " out of 5 correct!";
+  }
+</script>
+
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
