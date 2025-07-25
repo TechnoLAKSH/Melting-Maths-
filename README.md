@@ -336,90 +336,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 3 Quiz – Mealting Maths</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Grade 3 Arithmetic Quiz</title>
+  <style>
+    body {
+      background-color: #fff8e1;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #ef6c00;
+    }
+    .question {
+      background: #ffffff;
+      border: 2px solid #ffb74d;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      text-align: left;
+    }
+    input[type="radio"] {
+      margin: 10px;
+    }
+    button {
+      background-color: #ef6c00;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #e65100;
+    }
+    #score {
+      font-size: 20px;
+      color: #2e7d32;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-orange-400 p-4 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
-      <nav class="space-x-4 text-white">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
-      </nav>
+<body>
+  <h1>Grade 3 Arithmetic Quiz</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>1. What is 45 ÷ 5?</p>
+      <label><input type="radio" name="q1" value="a"> 9</label><br>
+      <label><input type="radio" name="q1" value="b"> 8</label><br>
+      <label><input type="radio" name="q1" value="c"> 10</label>
     </div>
-  </header>
 
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 3 Arithmetic Quiz</h2>
+    <div class="question">
+      <p>2. What is the sum of 345 and 276?</p>
+      <label><input type="radio" name="q2" value="a"> 621</label><br>
+      <label><input type="radio" name="q2" value="b"> 611</label><br>
+      <label><input type="radio" name="q2" value="c"> 620</label>
+    </div>
 
-    <form id="quizForm" class="space-y-6">
-      <div>
-        <p class="font-semibold">1. What is 23 + 19?</p>
-        <input type="radio" name="q1" value="42"> 42<br />
-        <input type="radio" name="q1" value="43"> 43<br />
-        <input type="radio" name="q1" value="44"> 44
-      </div>
+    <div class="question">
+      <p>3. What is 100 less than 953?</p>
+      <label><input type="radio" name="q3" value="a"> 863</label><br>
+      <label><input type="radio" name="q3" value="b"> 853</label><br>
+      <label><input type="radio" name="q3" value="c"> 843</label>
+    </div>
 
-      <div>
-        <p class="font-semibold">2. What is 50 - 17?</p>
-        <input type="radio" name="q2" value="33"> 33<br />
-        <input type="radio" name="q2" value="32"> 32<br />
-        <input type="radio" name="q2" value="34"> 34
-      </div>
+    <div class="question">
+      <p>4. Multiply: 7 × 8</p>
+      <label><input type="radio" name="q4" value="a"> 54</label><br>
+      <label><input type="radio" name="q4" value="b"> 56</label><br>
+      <label><input type="radio" name="q4" value="c"> 64</label>
+    </div>
 
-      <div>
-        <p class="font-semibold">3. What is 6 × 4?</p>
-        <input type="radio" name="q3" value="24"> 24<br />
-        <input type="radio" name="q3" value="20"> 20<br />
-        <input type="radio" name="q3" value="26"> 26
-      </div>
+    <div class="question">
+      <p>5. What is the place value of 2 in 524?</p>
+      <label><input type="radio" name="q5" value="a"> 2</label><br>
+      <label><input type="radio" name="q5" value="b"> 20</label><br>
+      <label><input type="radio" name="q5" value="c"> 200</label>
+    </div>
 
-      <div>
-        <p class="font-semibold">4. What is 36 ÷ 6?</p>
-        <input type="radio" name="q4" value="5"> 5<br />
-        <input type="radio" name="q4" value="6"> 6<br />
-        <input type="radio" name="q4" value="7"> 7
-      </div>
-
-      <div>
-        <p class="font-semibold">5. I had 5 candies. I bought 3 more packs with 2 candies each. How many do I have now?</p>
-        <input type="radio" name="q5" value="9"> 9<br />
-        <input type="radio" name="q5" value="10"> 10<br />
-        <input type="radio" name="q5" value="11"> 11
-      </div>
-
-      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
-    </form>
-
-    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
-  </main>
-
-  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
-    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
-  </footer>
+    <button type="button" onclick="checkAnswers()">Submit</button>
+    <div id="score"></div>
+  </form>
 
   <script>
-    function submitQuiz() {
-      const correctAnswers = {
-        q1: "42",
-        q2: "33",
-        q3: "24",
-        q4: "6",
-        q5: "11"
+    function checkAnswers() {
+      let score = 0;
+      const answers = {
+        q1: 'a',
+        q2: 'a',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b'
       };
 
-      let score = 0;
-      const form = document.forms["quizForm"];
-      for (const key in correctAnswers) {
-        if (form[key].value === correctAnswers[key]) {
+      for (let q in answers) {
+        const selected = document.querySelector('input[name=' + q + ']:checked');
+        if (selected && selected.value === answers[q]) {
           score++;
         }
       }
 
-      document.getElementById("result").textContent = `You scored ${score}/5!`;
+      document.getElementById("score").innerText = "You scored " + score + " out of 5!";
     }
   </script>
 </body>
