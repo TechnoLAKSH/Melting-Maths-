@@ -447,94 +447,116 @@
   </script>
 </body>
 </html>
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 4 Quiz – Mealting Maths</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Grade 4 Arithmetic Quiz</title>
+  <style>
+    body {
+      background-color: #e1f5fe;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #0277bd;
+    }
+    .question {
+      background: #ffffff;
+      border: 2px solid #4fc3f7;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      text-align: left;
+    }
+    input[type="radio"] {
+      margin: 10px;
+    }
+    button {
+      background-color: #0288d1;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #01579b;
+    }
+    #score {
+      font-size: 20px;
+      color: #2e7d32;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-orange-400 p-4 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
-      <nav class="space-x-4 text-white">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
-      </nav>
+<body>
+  <h1>Grade 4 Arithmetic Quiz</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>1. What is the product of 23 × 4?</p>
+      <label><input type="radio" name="q1" value="a"> 82</label><br>
+      <label><input type="radio" name="q1" value="b"> 92</label><br>
+      <label><input type="radio" name="q1" value="c"> 86</label>
     </div>
-  </header>
 
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 4 Arithmetic Quiz</h2>
+    <div class="question">
+      <p>2. What is the value of 378 + 245?</p>
+      <label><input type="radio" name="q2" value="a"> 623</label><br>
+      <label><input type="radio" name="q2" value="b"> 613</label><br>
+      <label><input type="radio" name="q2" value="c"> 633</label>
+    </div>
 
-    <form id="quizForm" class="space-y-6">
-      <div>
-        <p class="font-semibold">1. What is 125 + 378?</p>
-        <input type="radio" name="q1" value="493"> 493<br />
-        <input type="radio" name="q1" value="503"> 503<br />
-        <input type="radio" name="q1" value="513"> 513
-      </div>
+    <div class="question">
+      <p>3. What is 1000 - 475?</p>
+      <label><input type="radio" name="q3" value="a"> 525</label><br>
+      <label><input type="radio" name="q3" value="b"> 535</label><br>
+      <label><input type="radio" name="q3" value="c"> 545</label>
+    </div>
 
-      <div>
-        <p class="font-semibold">2. What is 900 - 475?</p>
-        <input type="radio" name="q2" value="425"> 425<br />
-        <input type="radio" name="q2" value="435"> 435<br />
-        <input type="radio" name="q2" value="445"> 445
-      </div>
+    <div class="question">
+      <p>4. Which of the following is a multiple of 9?</p>
+      <label><input type="radio" name="q4" value="a"> 27</label><br>
+      <label><input type="radio" name="q4" value="b"> 26</label><br>
+      <label><input type="radio" name="q4" value="c"> 25</label>
+    </div>
 
-      <div>
-        <p class="font-semibold">3. What is 12 × 6?</p>
-        <input type="radio" name="q3" value="72"> 72<br />
-        <input type="radio" name="q3" value="76"> 76<br />
-        <input type="radio" name="q3" value="66"> 66
-      </div>
+    <div class="question">
+      <p>5. What is the place value of 6 in the number 763?</p>
+      <label><input type="radio" name="q5" value="a"> 60</label><br>
+      <label><input type="radio" name="q5" value="b"> 600</label><br>
+      <label><input type="radio" name="q5" value="c"> 6</label>
+    </div>
 
-      <div>
-        <p class="font-semibold">4. What is 144 ÷ 12?</p>
-        <input type="radio" name="q4" value="11"> 11<br />
-        <input type="radio" name="q4" value="12"> 12<br />
-        <input type="radio" name="q4" value="13"> 13
-      </div>
-
-      <div>
-        <p class="font-semibold">5. Sam bought 3 packs of pencils. Each pack has 8 pencils. He gave away 5. How many pencils does he have now?</p>
-        <input type="radio" name="q5" value="19"> 19<br />
-        <input type="radio" name="q5" value="21"> 21<br />
-        <input type="radio" name="q5" value="24"> 24
-      </div>
-
-      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
-    </form>
-
-    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
-  </main>
-
-  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
-    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
-  </footer>
+    <button type="button" onclick="checkAnswers()">Submit</button>
+    <div id="score"></div>
+  </form>
 
   <script>
-    function submitQuiz() {
-      const correctAnswers = {
-        q1: "503",
-        q2: "425",
-        q3: "72",
-        q4: "12",
-        q5: "19"
+    function checkAnswers() {
+      let score = 0;
+      const answers = {
+        q1: 'b',
+        q2: 'a',
+        q3: 'a',
+        q4: 'a',
+        q5: 'a'
       };
 
-      let score = 0;
-      const form = document.forms["quizForm"];
-      for (const key in correctAnswers) {
-        if (form[key].value === correctAnswers[key]) {
+      for (let q in answers) {
+        const selected = document.querySelector('input[name=' + q + ']:checked');
+        if (selected && selected.value === answers[q]) {
           score++;
         }
       }
 
-      document.getElementById("result").textContent = `You scored ${score}/5!`;
+      document.getElementById("score").innerText = "You scored " + score + " out of 5!";
     }
   </script>
 </body>
