@@ -222,134 +222,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Quiz 2.0 - Tough Arithmetic</title>
+  <title>Grade 2 Arithmetic Quiz</title>
   <style>
     body {
-      background-color: #fdf6e3;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      padding: 40px;
+      background-color: #e0f7fa;
+      font-family: 'Verdana', sans-serif;
+      padding: 30px;
       text-align: center;
     }
     h1 {
-      color: #d32f2f;
+      color: #00796b;
     }
     .question {
-      background: #fff3e0;
-      border: 2px dashed #ff9800;
+      background: #ffffff;
+      border: 2px solid #4db6ac;
       padding: 20px;
       margin: 20px auto;
       border-radius: 10px;
       width: 90%;
-      max-width: 700px;
+      max-width: 600px;
+      text-align: left;
     }
     input[type="radio"] {
       margin: 10px;
     }
     button {
-      background-color: #f57c00;
+      background-color: #00796b;
       color: white;
       padding: 10px 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-size: 16px;
       cursor: pointer;
       margin-top: 20px;
     }
     button:hover {
-      background-color: #e65100;
+      background-color: #004d40;
     }
     #score {
       font-size: 20px;
-      color: green;
+      color: #1b5e20;
       margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Quiz 2.0 - Tough Arithmetic</h1>
+  <h1>Grade 2 Arithmetic Quiz</h1>
 
   <form id="quizForm">
-
-    <!-- Original 5 Questions -->
     <div class="question">
-      <p>1. What is the value of 9876 × 123?</p>
-      <label><input type="radio" name="q1" value="a"> 1212998</label><br>
-      <label><input type="radio" name="q1" value="b"> 1214748</label><br>
-      <label><input type="radio" name="q1" value="c"> 1249956</label><br>
-      <label><input type="radio" name="q1" value="d"> 1212548</label>
+      <p>1. What is 24 + 13?</p>
+      <label><input type="radio" name="q1" value="a"> 37</label><br>
+      <label><input type="radio" name="q1" value="b"> 36</label><br>
+      <label><input type="radio" name="q1" value="c"> 38</label>
     </div>
 
     <div class="question">
-      <p>2. Simplify: (35 × 8) + (35 × 2)</p>
-      <label><input type="radio" name="q2" value="a"> 315</label><br>
-      <label><input type="radio" name="q2" value="b"> 350</label><br>
-      <label><input type="radio" name="q2" value="c"> 280</label><br>
-      <label><input type="radio" name="q2" value="d"> 370</label>
+      <p>2. What is the value of the digit 5 in 452?</p>
+      <label><input type="radio" name="q2" value="a"> 500</label><br>
+      <label><input type="radio" name="q2" value="b"> 50</label><br>
+      <label><input type="radio" name="q2" value="c"> 5</label>
     </div>
 
     <div class="question">
-      <p>3. What is the smallest number which when divided by 8, 12, and 20 leaves a remainder of 5?</p>
-      <label><input type="radio" name="q3" value="a"> 125</label><br>
-      <label><input type="radio" name="q3" value="b"> 245</label><br>
-      <label><input type="radio" name="q3" value="c"> 165</label><br>
-      <label><input type="radio" name="q3" value="d"> 85</label>
+      <p>3. Which number is greater?</p>
+      <label><input type="radio" name="q3" value="a"> 98</label><br>
+      <label><input type="radio" name="q3" value="b"> 89</label><br>
+      <label><input type="radio" name="q3" value="c"> 88</label>
     </div>
 
     <div class="question">
-      <p>4. A number is divided by 13 and gives quotient 29 and remainder 4. What is the number?</p>
-      <label><input type="radio" name="q4" value="a"> 381</label><br>
-      <label><input type="radio" name="q4" value="b"> 377</label><br>
-      <label><input type="radio" name="q4" value="c"> 391</label><br>
-      <label><input type="radio" name="q4" value="d"> 387</label>
+      <p>4. What is 100 - 57?</p>
+      <label><input type="radio" name="q4" value="a"> 53</label><br>
+      <label><input type="radio" name="q4" value="b"> 43</label><br>
+      <label><input type="radio" name="q4" value="c"> 47</label>
     </div>
 
     <div class="question">
-      <p>5. Find the square of 125 without actual multiplication.</p>
-      <label><input type="radio" name="q5" value="a"> 15025</label><br>
-      <label><input type="radio" name="q5" value="b"> 15625</label><br>
-      <label><input type="radio" name="q5" value="c"> 16225</label><br>
-      <label><input type="radio" name="q5" value="d"> 15875</label>
-    </div>
-
-    <!-- New Additional 5 Tough Questions -->
-    <div class="question">
-      <p>6. The HCF of two numbers is 12, and their LCM is 180. If one number is 60, what is the other?</p>
-      <label><input type="radio" name="q6" value="a"> 36</label><br>
-      <label><input type="radio" name="q6" value="b"> 48</label><br>
-      <label><input type="radio" name="q6" value="c"> 72</label><br>
-      <label><input type="radio" name="q6" value="d"> 90</label>
-    </div>
-
-    <div class="question">
-      <p>7. A number when divided by 3 gives remainder 2, by 4 gives 3, by 5 gives 4. What is the number?</p>
-      <label><input type="radio" name="q7" value="a"> 59</label><br>
-      <label><input type="radio" name="q7" value="b"> 94</label><br>
-      <label><input type="radio" name="q7" value="c"> 119</label><br>
-      <label><input type="radio" name="q7" value="d"> 74</label>
-    </div>
-
-    <div class="question">
-      <p>8. The difference between the squares of two consecutive numbers is 51. What is the smaller number?</p>
-      <label><input type="radio" name="q8" value="a"> 24</label><br>
-      <label><input type="radio" name="q8" value="b"> 25</label><br>
-      <label><input type="radio" name="q8" value="c"> 26</label><br>
-      <label><input type="radio" name="q8" value="d"> 27</label>
-    </div>
-
-    <div class="question">
-      <p>9. Find the 3-digit number whose digits are consecutive, and the sum of digits is 18.</p>
-      <label><input type="radio" name="q9" value="a"> 654</label><br>
-      <label><input type="radio" name="q9" value="b"> 456</label><br>
-      <label><input type="radio" name="q9" value="c"> 345</label><br>
-      <label><input type="radio" name="q9" value="d"> 789</label>
-    </div>
-
-    <div class="question">
-      <p>10. What is the value of: (1002 × 1002) - (2 × 1002) + 1?</p>
-      <label><input type="radio" name="q10" value="a"> 1000001</label><br>
-      <label><input type="radio" name="q10" value="b"> 1002001</label><br>
-      <label><input type="radio" name="q10" value="c"> 1004001</label><br>
-      <label><input type="radio" name="q10" value="d"> 1000000</label>
+      <p>5. Which number comes next: 10, 20, 30, ___?</p>
+      <label><input type="radio" name="q5" value="a"> 35</label><br>
+      <label><input type="radio" name="q5" value="b"> 40</label><br>
+      <label><input type="radio" name="q5" value="c"> 50</label>
     </div>
 
     <button type="button" onclick="checkAnswers()">Submit</button>
@@ -360,16 +313,11 @@
     function checkAnswers() {
       let score = 0;
       const answers = {
-        q1: 'b',
+        q1: 'a',
         q2: 'b',
-        q3: 'c',
-        q4: 'a',
-        q5: 'b',
-        q6: 'c',
-        q7: 'c',
-        q8: 'c',
-        q9: 'd',
-        q10: 'a'
+        q3: 'a',
+        q4: 'b',
+        q5: 'b'
       };
 
       for (let q in answers) {
@@ -379,7 +327,7 @@
         }
       }
 
-      document.getElementById("score").innerText = "You scored " + score + " out of 10!";
+      document.getElementById("score").innerText = "You scored " + score + " out of 5!";
     }
   </script>
 </body>
