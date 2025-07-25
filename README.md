@@ -180,7 +180,7 @@
     <input type="radio" name="q3" value="9"> 9<br>
     <input type="radio" name="q3" value="7"> 7<br>
     <input type="radio" name="q3" value="6"> 6
-  </div>
+  </div> 
 
   <div class="question">
     <label>4. What is 5 + 0?</label>
