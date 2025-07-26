@@ -1056,97 +1056,133 @@
 </body>
 </html>
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 9 Quiz – Mealting Maths</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Grade 9 Arithmetic Quiz – Test Your Logical Power!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin: 0;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2b2d42;
+      margin-bottom: 30px;
+    }
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    #submit {
+      background-color: #0077b6;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #007f5f;
+    }
+  </style>
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-orange-400 p-4 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
-      <nav class="space-x-4 text-white">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
-      </nav>
-    </div>
-  </header>
+<body>
+  <div class="quiz-container">
+    <h1>Grade 9 Arithmetic Quiz – Test Your Logical Power!</h1>
 
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 9 Arithmetic Quiz – Advanced</h2>
-
-    <form id="quizForm" class="space-y-6">
-      <div>
-        <p class="font-semibold">1. Simplify: 3² × 2³ − 4</p>
-        <input type="radio" name="q1" value="68"> 68<br />
-        <input type="radio" name="q1" value="20"> 20<br />
-        <input type="radio" name="q1" value="68"> 68
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. If x² + 5x + 6 = 0, what are the roots of the equation?</h3>
+        <label><input type="radio" name="q1" value="a"> x = -2, x = -3</label><br />
+        <label><input type="radio" name="q1" value="b"> x = 2, x = 3</label><br />
+        <label><input type="radio" name="q1" value="c"> x = -1, x = -6</label><br />
+        <label><input type="radio" name="q1" value="d"> x = 1, x = 6</label>
       </div>
 
-      <div>
-        <p class="font-semibold">2. Solve: If 5x − 3 = 2x + 12, what is x?</p>
-        <input type="radio" name="q2" value="5"> 5<br />
-        <input type="radio" name="q2" value="6"> 6<br />
-        <input type="radio" name="q2" value="7"> 7
+      <div class="question">
+        <h3>2. Evaluate: (3² × 2³) ÷ 6</h3>
+        <label><input type="radio" name="q2" value="a"> 8</label><br />
+        <label><input type="radio" name="q2" value="b"> 6</label><br />
+        <label><input type="radio" name="q2" value="c"> 12</label><br />
+        <label><input type="radio" name="q2" value="d"> 9</label>
       </div>
 
-      <div>
-        <p class="font-semibold">3. Find the value of: (3/4 ÷ 1/2) + (2/5 × 3/8)</p>
-        <input type="radio" name="q3" value="2.3"> 2.3<br />
-        <input type="radio" name="q3" value="2.05"> 2.05<br />
-        <input type="radio" name="q3" value="2.1"> 2.1
+      <div class="question">
+        <h3>3. A man’s salary is increased by 10% and then decreased by 10%. What is the net change?</h3>
+        <label><input type="radio" name="q3" value="a"> Increase by 1%</label><br />
+        <label><input type="radio" name="q3" value="b"> No change</label><br />
+        <label><input type="radio" name="q3" value="c"> Decrease by 1%</label><br />
+        <label><input type="radio" name="q3" value="d"> Decrease by 10%</label>
       </div>
 
-      <div>
-        <p class="font-semibold">4. A number is increased by 30% and then decreased by 20%. What is the net percentage change?</p>
-        <input type="radio" name="q4" value="4% increase"> 4% increase<br />
-        <input type="radio" name="q4" value="10% increase"> 10% increase<br />
-        <input type="radio" name="q4" value="4% decrease"> 4% decrease
+      <div class="question">
+        <h3>4. If √x = 7, what is the value of x + √x?</h3>
+        <label><input type="radio" name="q4" value="a"> 56</label><br />
+        <label><input type="radio" name="q4" value="b"> 57</label><br />
+        <label><input type="radio" name="q4" value="c"> 49</label><br />
+        <label><input type="radio" name="q4" value="d"> 14</label>
       </div>
 
-      <div>
-        <p class="font-semibold">5. If (x − 3)(x + 5) = 0, what are the roots?</p>
-        <input type="radio" name="q5" value="x = −5, 3"> x = −5, 3<br />
-        <input type="radio" name="q5" value="x = 5, 3"> x = 5, 3<br />
-        <input type="radio" name="q5" value="x = −3, 5"> x = −3, 5
+      <div class="question">
+        <h3>5. Simplify: (2x + 3)(2x - 3)</h3>
+        <label><input type="radio" name="q5" value="a"> 4x² + 9</label><br />
+        <label><input type="radio" name="q5" value="b"> 4x² - 9</label><br />
+        <label><input type="radio" name="q5" value="c"> 4x² + 6x - 9</label><br />
+        <label><input type="radio" name="q5" value="d"> 4x² - 6x - 9</label>
       </div>
 
-      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+      <button type="button" id="submit" onclick="calculateScore()">Submit</button>
     </form>
 
-    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
-  </main>
-
-  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
-    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
-  </footer>
+    <div id="result"></div>
+  </div>
 
   <script>
-    function submitQuiz() {
-      const correctAnswers = {
-        q1: "68",
-        q2: "5",
-        q3: "2.3",
-        q4: "4% increase",
-        q5: "x = −5, 3"
+    function calculateScore() {
+      const answers = {
+        q1: "a",
+        q2: "b",
+        q3: "c",
+        q4: "b",
+        q5: "b"
       };
-
       let score = 0;
-      const form = document.forms["quizForm"];
-      for (const key in correctAnswers) {
-        if (form[key].value === correctAnswers[key]) {
+
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
           score++;
         }
       }
 
-      document.getElementById("result").textContent = `You scored ${score}/5!`;
+      document.getElementById("result").innerText = `Your score: ${score} out of 5`;
     }
   </script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
 <html lang="en">
