@@ -929,94 +929,135 @@
 </body>
 </html>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 8 Quiz – Mealting Maths</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Grade 8 Arithmetic Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 850px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2d3436;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    .question p {
+      font-weight: 600;
+    }
+    label {
+      display: block;
+      margin-left: 20px;
+      margin-bottom: 5px;
+    }
+    button {
+      background-color: #0984e3;
+      color: white;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #00b894;
+      text-align: center;
+    }
+  </style>
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-orange-400 p-4 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
-      <nav class="space-x-4 text-white">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
-      </nav>
-    </div>
-  </header>
+<body>
+  <div class="quiz-container">
+    <h1>Grade 8 Arithmetic Quiz (MCQs)</h1>
+    <form id="quizForm">
 
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 8 Arithmetic Quiz – Tough</h2>
-
-    <form id="quizForm" class="space-y-6">
-      <div>
-        <p class="font-semibold">1. Evaluate: (−12 + 5) × (−3)</p>
-        <input type="radio" name="q1" value="−21"> −21<br />
-        <input type="radio" name="q1" value="−27"> −27<br />
-        <input type="radio" name="q1" value="−36"> −36
+      <div class="question">
+        <p>1. Simplify: 5(2x - 3) + 4(3x + 2)</p>
+        <label><input type="radio" name="q1" value="22x - 7"> 22x - 7</label>
+        <label><input type="radio" name="q1" value="10x + 12"> 10x + 12</label>
+        <label><input type="radio" name="q1" value="22x + 7"> 22x + 7</label>
+        <label><input type="radio" name="q1" value="10x - 7"> 10x - 7</label>
       </div>
 
-      <div>
-        <p class="font-semibold">2. If x = 4 and y = −2, what is the value of: x² − y³?</p>
-        <input type="radio" name="q2" value="24"> 24<br />
-        <input type="radio" name="q2" value="8"> 8<br />
-        <input type="radio" name="q2" value="32"> 32
+      <div class="question">
+        <p>2. What is the cube of 7?</p>
+        <label><input type="radio" name="q2" value="343"> 343</label>
+        <label><input type="radio" name="q2" value="49"> 49</label>
+        <label><input type="radio" name="q2" value="27"> 27</label>
+        <label><input type="radio" name="q2" value="512"> 512</label>
       </div>
 
-      <div>
-        <p class="font-semibold">3. What is the reciprocal of −5/6?</p>
-        <input type="radio" name="q3" value="−6/5"> −6/5<br />
-        <input type="radio" name="q3" value="5/6"> 5/6<br />
-        <input type="radio" name="q3" value="−5/6"> −5/6
+      <div class="question">
+        <p>3. Solve: 2/3 ÷ 4/5</p>
+        <label><input type="radio" name="q3" value="8/15"> 8/15</label>
+        <label><input type="radio" name="q3" value="10/12"> 10/12</label>
+        <label><input type="radio" name="q3" value="5/6"> 5/6</label>
+        <label><input type="radio" name="q3" value="15/8"> 15/8</label>
       </div>
 
-      <div>
-        <p class="font-semibold">4. If the original price of a jacket is ₹1200 and it is increased by 15%, what is the new price?</p>
-        <input type="radio" name="q4" value="₹1380"> ₹1380<br />
-        <input type="radio" name="q4" value="₹1350"> ₹1350<br />
-        <input type="radio" name="q4" value="₹1320"> ₹1320
+      <div class="question">
+        <p>4. Find the value of x: 3x - 7 = 11</p>
+        <label><input type="radio" name="q4" value="6"> 6</label>
+        <label><input type="radio" name="q4" value="7"> 7</label>
+        <label><input type="radio" name="q4" value="5"> 5</label>
+        <label><input type="radio" name="q4" value="4"> 4</label>
       </div>
 
-      <div>
-        <p class="font-semibold">5. Simplify: 3a − 2b + 4a + b</p>
-        <input type="radio" name="q5" value="7a − b"> 7a − b<br />
-        <input type="radio" name="q5" value="6a + 3b"> 6a + 3b<br />
-        <input type="radio" name="q5" value="7a − 3b"> 7a − 3b
+      <div class="question">
+        <p>5. A shopkeeper earns ₹25 on every ₹500 sale. What is the profit percent?</p>
+        <label><input type="radio" name="q5" value="5%"> 5%</label>
+        <label><input type="radio" name="q5" value="2%"> 2%</label>
+        <label><input type="radio" name="q5" value="4%"> 4%</label>
+        <label><input type="radio" name="q5" value="6%"> 6%</label>
       </div>
 
-      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+      <div style="text-align:center; margin-top: 20px;">
+        <button type="button" onclick="checkAnswers()">Submit</button>
+      </div>
     </form>
-
-    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
-  </main>
-
-  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
-    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
-  </footer>
+    <div id="result"></div>
+  </div>
 
   <script>
-    function submitQuiz() {
-      const correctAnswers = {
-        q1: "−21",
-        q2: "32",
-        q3: "−6/5",
-        q4: "₹1380",
-        q5: "7a − b"
+    function checkAnswers() {
+      const answers = {
+        q1: "22x + 7",
+        q2: "343",
+        q3: "5/6",
+        q4: "6",
+        q5: "5%"
       };
 
       let score = 0;
-      const form = document.forms["quizForm"];
-      for (const key in correctAnswers) {
-        if (form[key].value === correctAnswers[key]) {
+      for (let key in answers) {
+        const selected = document.querySelector('input[name="' + key + '"]:checked');
+        if (selected && selected.value === answers[key]) {
           score++;
         }
       }
 
-      <!DOCTYPE html>
+      document.getElementById("result").innerText = "You scored " + score + " out of 5!";
+    }
+  </script>
+</body>
+</html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
