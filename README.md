@@ -933,20 +933,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grade 8 Arithmetic Quiz</title>
+  <title>Grade 7 Arithmetic Quiz</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
       padding: 20px;
     }
-    .quiz-container {
-      max-width: 850px;
+    .quiz-box {
+      background-color: #fff;
+      max-width: 800px;
       margin: auto;
-      background: #ffffff;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h1 {
       text-align: center;
@@ -956,97 +956,96 @@
       margin-bottom: 25px;
     }
     .question p {
-      font-weight: 600;
+      font-weight: bold;
     }
     label {
       display: block;
       margin-left: 20px;
-      margin-bottom: 5px;
     }
     button {
-      background-color: #0984e3;
-      color: white;
+      display: block;
+      margin: 20px auto;
       padding: 10px 25px;
       font-size: 16px;
+      background-color: #0984e3;
+      color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 5px;
       cursor: pointer;
     }
     #result {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #00b894;
       text-align: center;
+      font-size: 18px;
+      color: #00b894;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>Grade 8 Arithmetic Quiz (MCQs)</h1>
+  <div class="quiz-box">
+    <h1>Grade 7 Arithmetic Quiz (MCQs)</h1>
     <form id="quizForm">
 
       <div class="question">
-        <p>1. Simplify: 5(2x - 3) + 4(3x + 2)</p>
-        <label><input type="radio" name="q1" value="22x - 7"> 22x - 7</label>
-        <label><input type="radio" name="q1" value="10x + 12"> 10x + 12</label>
-        <label><input type="radio" name="q1" value="22x + 7"> 22x + 7</label>
-        <label><input type="radio" name="q1" value="10x - 7"> 10x - 7</label>
+        <p>1. Simplify: 3(2x - 5) - 4(x + 2)</p>
+        <label><input type="radio" name="q1" value="2x - 23"> 2x - 23</label>
+        <label><input type="radio" name="q1" value="2x + 4"> 2x + 4</label>
+        <label><input type="radio" name="q1" value="6x - 15 - 4x - 8"> 6x - 15 - 4x - 8</label>
+        <label><input type="radio" name="q1" value="10x - 1"> 10x - 1</label>
       </div>
 
       <div class="question">
-        <p>2. What is the cube of 7?</p>
-        <label><input type="radio" name="q2" value="343"> 343</label>
-        <label><input type="radio" name="q2" value="49"> 49</label>
-        <label><input type="radio" name="q2" value="27"> 27</label>
-        <label><input type="radio" name="q2" value="512"> 512</label>
+        <p>2. Find the HCF of 72 and 120.</p>
+        <label><input type="radio" name="q2" value="12"> 12</label>
+        <label><input type="radio" name="q2" value="24"> 24</label>
+        <label><input type="radio" name="q2" value="48"> 48</label>
+        <label><input type="radio" name="q2" value="36"> 36</label>
       </div>
 
       <div class="question">
-        <p>3. Solve: 2/3 ÷ 4/5</p>
-        <label><input type="radio" name="q3" value="8/15"> 8/15</label>
-        <label><input type="radio" name="q3" value="10/12"> 10/12</label>
-        <label><input type="radio" name="q3" value="5/6"> 5/6</label>
-        <label><input type="radio" name="q3" value="15/8"> 15/8</label>
+        <p>3. What is the value of 2<sup>3</sup> + 3<sup>2</sup>?</p>
+        <label><input type="radio" name="q3" value="17"> 17</label>
+        <label><input type="radio" name="q3" value="16"> 16</label>
+        <label><input type="radio" name="q3" value="18"> 18</label>
+        <label><input type="radio" name="q3" value="15"> 15</label>
       </div>
 
       <div class="question">
-        <p>4. Find the value of x: 3x - 7 = 11</p>
-        <label><input type="radio" name="q4" value="6"> 6</label>
-        <label><input type="radio" name="q4" value="7"> 7</label>
-        <label><input type="radio" name="q4" value="5"> 5</label>
-        <label><input type="radio" name="q4" value="4"> 4</label>
+        <p>4. Convert 0.75 to a fraction in simplest form.</p>
+        <label><input type="radio" name="q4" value="3/4"> 3/4</label>
+        <label><input type="radio" name="q4" value="75/100"> 75/100</label>
+        <label><input type="radio" name="q4" value="1/2"> 1/2</label>
+        <label><input type="radio" name="q4" value="2/3"> 2/3</label>
       </div>
 
       <div class="question">
-        <p>5. A shopkeeper earns ₹25 on every ₹500 sale. What is the profit percent?</p>
-        <label><input type="radio" name="q5" value="5%"> 5%</label>
-        <label><input type="radio" name="q5" value="2%"> 2%</label>
-        <label><input type="radio" name="q5" value="4%"> 4%</label>
-        <label><input type="radio" name="q5" value="6%"> 6%</label>
+        <p>5. A man walks 2.5 km in 30 minutes. What is his speed in km/hr?</p>
+        <label><input type="radio" name="q5" value="5"> 5</label>
+        <label><input type="radio" name="q5" value="6"> 6</label>
+        <label><input type="radio" name="q5" value="4"> 4</label>
+        <label><input type="radio" name="q5" value="3"> 3</label>
       </div>
 
-      <div style="text-align:center; margin-top: 20px;">
-        <button type="button" onclick="checkAnswers()">Submit</button>
-      </div>
+      <button type="button" onclick="checkAnswers()">Submit</button>
     </form>
+
     <div id="result"></div>
   </div>
 
   <script>
     function checkAnswers() {
       const answers = {
-        q1: "22x + 7",
-        q2: "343",
-        q3: "5/6",
-        q4: "6",
-        q5: "5%"
+        q1: "2x - 23",
+        q2: "24",
+        q3: "17",
+        q4: "3/4",
+        q5: "5"
       };
 
       let score = 0;
-      for (let key in answers) {
-        const selected = document.querySelector('input[name="' + key + '"]:checked');
-        if (selected && selected.value === answers[key]) {
+      for (let q in answers) {
+        const selected = document.querySelector('input[name="' + q + '"]:checked');
+        if (selected && selected.value === answers[q]) {
           score++;
         }
       }
