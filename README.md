@@ -676,117 +676,96 @@
   </script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 6 Tough Quiz – Mealting Maths</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Grade 6 Arithmetic Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e0f7fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    h1 {
+      text-align: center;
+      color: #00796b;
+    }
+    .question {
+      margin: 20px 0;
+    }
+    button {
+      background-color: #00796b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #d84315;
+    }
+  </style>
 </head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-orange-400 p-4 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
-      <nav class="space-x-4 text-white">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 6 Arithmetic Quiz – Tough</h2>
-
-    <form id="quizForm" class="space-y-6">
-      <div>
-        <p class="font-semibold">1. What is the least common multiple (LCM) of 8, 12, and 18?</p>
-        <input type="radio" name="q1" value="72"> 72<br />
-        <input type="radio" name="q1" value="36"> 36<br />
-        <input type="radio" name="q1" value="144"> 144
+<body>
+  <div class="container">
+    <h1>Grade 6 Arithmetic Quiz</h1>
+    <form id="quizForm">
+      <div class="question">
+        <label>1. What is the value of 25 × 4 + 100 ÷ 2?</label><br>
+        <input type="text" name="q1">
       </div>
-
-      <div>
-        <p class="font-semibold">2. What is (144 ÷ 6) × (5 + 7) − 24?</p>
-        <input type="radio" name="q2" value="240"> 240<br />
-        <input type="radio" name="q2" value="264"> 264<br />
-        <input type="radio" name="q2" value="252"> 252
+      <div class="question">
+        <label>2. What is the HCF of 48 and 60?</label><br>
+        <input type="text" name="q2">
       </div>
-
-      <div>
-        <p class="font-semibold">3. A train travels 96 km in 3 hours. At the same speed, how far will it travel in 5.5 hours?</p>
-        <input type="radio" name="q3" value="160"> 160 km<br />
-        <input type="radio" name="q3" value="176"> 176 km<br />
-        <input type="radio" name="q3" value="180"> 180 km
+      <div class="question">
+        <label>3. Solve: 15² − 5² = ?</label><br>
+        <input type="text" name="q3">
       </div>
-
-      <div>
-        <p class="font-semibold">4. Which of the following numbers is divisible by both 3 and 4?</p>
-        <input type="radio" name="q4" value="126"> 126<br />
-        <input type="radio" name="q4" value="132"> 132<br />
-        <input type="radio" name="q4" value="138"> 138
+      <div class="question">
+        <label>4. If a number is divisible by both 3 and 4, it must be divisible by which number?</label><br>
+        <input type="text" name="q4">
       </div>
-
-      <div>
-        <p class="font-semibold">5. A basket has 48 mangoes. If 25% get spoiled and the rest are equally packed into 5 boxes, how many mangoes are in each box?</p>
-        <input type="radio" name="q5" value="6"> 6<br />
-        <input type="radio" name="q5" value="7"> 7<br />
-        <input type="radio" name="q5" value="8"> 8
+      <div class="question">
+        <label>5. Simplify: (3/4 + 1/2) − 1/8 = ?</label><br>
+        <input type="text" name="q5">
       </div>
-
-      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+      <button type="button" onclick="checkAnswers()">Submit</button>
     </form>
-
-    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
-  </main>
-
-  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
-    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
-  </footer>
+    <div id="result"></div>
+  </div>
 
   <script>
-    function submitQuiz() {
-      const correctAnswers = {
-        q1: "72",
-        q2: "252",
-        q3: "176",
-        q4: "132",
-        q5: "8"
-      };
-
+    function checkAnswers() {
+      const answers = ["150", "12", "200", "12", "1.125"];
       let score = 0;
-      const form = document.forms["quizForm"];
-      for (const key in correctAnswers) {
-        if (form[key].value === correctAnswers[key]) {
+      const form = document.forms['quizForm'];
+      for (let i = 0; i < answers.length; i++) {
+        const userAnswer = form['q' + (i + 1)].value.trim();
+        if (userAnswer === answers[i]) {
           score++;
         }
       }
-
-      document.getElementById("result").textContent = `You scored ${score}/5!`;
+      document.getElementById("result").innerText = 
+        "You scored " + score + " out of " + answers.length + ".";
     }
   </script>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 7 Quiz – Mealting Maths</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-orange-400 p-4 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl text-white">🍽️ Mealting Maths</h1>
-      <nav class="space-x-4 text-white">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
-      </nav>
-    </div>
-  </header>
 
   <main class="max-w-3xl mx-auto mt-10 p-4">
     <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 7 Arithmetic Quiz – Challenging</h2>
