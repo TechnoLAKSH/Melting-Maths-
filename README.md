@@ -9,109 +9,73 @@
     <p class="text-xl mt-2 text-gray-800">Laksh Agarwal</p>
   </div>
 </section>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade X Arithmetic Quiz – Mealting Maths</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-blue-50 text-gray-800">
-  <header class="bg-orange-400 p-4 shadow-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl text-white">🍽 Mealting Maths</h1>
-      <nav class="space-x-4 text-white">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="quiz.html" class="hover:underline font-bold">Quizzes</a>
-      </nav>
-    </div>
-  </header>
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-    <div class="mb-6 text-center">
-      <label for="gradeSelect" class="text-lg font-semibold text-gray-700 mr-2">Select Grade:</label>
-      <select id="gradeSelect" class="p-2 rounded border border-gray-300" onchange="goToQuizPage()">
-        <option disabled selected>Select a grade</option>
-        <option value="quiz-grade1.html">Grade 1</option>
-        <option value="quiz-grade2.html">Grade 2</option>
-        <option value="quiz-grade3.html">Grade 3</option>
-        <option value="quiz-grade4.html">Grade 4</option>
-        <option value="quiz-grade5.html">Grade 5</option>
-        <option value="quiz-grade6.html">Grade 6</option>
-        <option value="quiz-grade7.html">Grade 7</option>
-        <option value="quiz-grade8.html">Grade 8</option>
-        <option value="quiz-grade9.html">Grade 9</option>
-        <option value="quiz-grade10.html">Grade 10</option>
-      </select>
-    </div>
-     <h2 class="text-3xl text-center text-orange-500 mb-6">Grade X Arithmetic Quiz</h2>
-    <form id="quizForm" class="space-y-6">
-      <!-- Replace these with grade-specific questions -->
-      <div>
-        <p class="font-semibold">1. Sample question?</p>
-        <input type="radio" name="q1" value="A"> Option A<br />
-        <input type="radio" name="q1" value="B"> Option B<br />
-        <input type="radio" name="q1" value="C"> Option C
-      </div>
-      <div>
-        <p class="font-semibold">2. Sample question?</p>
-        <input type="radio" name="q2" value="A"> Option A<br />
-        <input type="radio" name="q2" value="B"> Option B<br />
-        <input type="radio" name="q2" value="C"> Option C
-      </div>
-      <div>
-        <p class="font-semibold">3. Sample question?</p>
-        <input type="radio" name="q3" value="A"> Option A<br />
-        <input type="radio" name="q3" value="B"> Option B<br />
-        <input type="radio" name="q3" value="C"> Option C
-      </div>
-      <div>
-        <p class="font-semibold">4. Sample question?</p>
-        <input type="radio" name="q4" value="A"> Option A<br />
-        <input type="radio" name="q4" value="B"> Option B<br />
-        <input type="radio" name="q4" value="C"> Option C
-      </div>
-      <div>
-        <p class="font-semibold">5. Sample question?</p>
-        <input type="radio" name="q5" value="A"> Option A<br />
-        <input type="radio" name="q5" value="B"> Option B<br />
-        <input type="radio" name="q5" value="C"> Option C
-      </div>
-      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
-    </form>
-    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
-  </main>
+  <meta charset="UTF-8">
+  <title>Select Grade | Arithmetic Quiz</title>
+  <style>
+    body {
+      background-color: #fef6e4;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
 
-  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
-    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
-  </footer>
+    h1 {
+      color: #ff6f61;
+      font-size: 32px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 20px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Your Grade to Start Quiz</h1>
+  <select id="gradeSelect">
+    <option value="">-- Choose Grade --</option>
+    <option value="grade1.html">Grade 1</option>
+    <option value="grade2.html">Grade 2</option>
+    <option value="grade3.html">Grade 3</option>
+    <option value="grade4.html">Grade 4</option>
+    <option value="grade5.html">Grade 5</option>
+    <option value="grade6.html">Grade 6</option>
+    <option value="grade7.html">Grade 7</option>
+    <option value="grade8.html">Grade 8</option>
+    <option value="grade9.html">Grade 9</option>
+    <option value="grade10.html">Grade 10</option>
+  </select><br>
+
+  <button onclick="goToQuiz()">Start Quiz</button>
 
   <script>
-    function submitQuiz() {
-      // Placeholder answers
-      const correctAnswers = {
-        q1: "A",
-        q2: "B",
-        q3: "C",
-        q4: "A",
-        q5: "C"
-      };
-      let score = 5;
-      const form = document.forms["quizForm"];
-      for (const key in correctAnswers) {
-        if (form[key]?.value === correctAnswers[key]) {
-          score++;
-        }
+    function goToQuiz() {
+      const selected = document.getElementById("gradeSelect").value;
+      if (selected) {
+        window.location.href = selected;
+      } else {
+        alert("Please select a grade first!");
       }
-      document.getElementById("result").textContent = You scored ${score}/5!;
-    }
-    function goToQuizPage() {
-      const selectedGrade = document.getElementById("gradeSelect").value;
-      window.location.href = selectedGrade;
     }
   </script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
