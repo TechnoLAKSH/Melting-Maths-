@@ -679,12 +679,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Grade 6 Arithmetic Quiz</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #e0f7fa;
+      background-color: #e3f2fd;
+      font-family: 'Verdana', sans-serif;
       margin: 0;
       padding: 20px;
     }
@@ -698,13 +698,13 @@
     }
     h1 {
       text-align: center;
-      color: #00796b;
+      color: #1565c0;
     }
     .question {
       margin: 20px 0;
     }
     button {
-      background-color: #00796b;
+      background-color: #1565c0;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -716,7 +716,7 @@
       margin-top: 20px;
       font-weight: bold;
       font-size: 18px;
-      color: #d84315;
+      color: #2e7d32;
     }
   </style>
 </head>
@@ -725,23 +725,23 @@
     <h1>Grade 6 Arithmetic Quiz</h1>
     <form id="quizForm">
       <div class="question">
-        <label>1. What is the value of 25 × 4 + 100 ÷ 2?</label><br>
+        <label>1. What is the LCM of 6 and 8?</label><br>
         <input type="text" name="q1">
       </div>
       <div class="question">
-        <label>2. What is the HCF of 48 and 60?</label><br>
+        <label>2. Simplify: 5 × (2 + 3) − 4</label><br>
         <input type="text" name="q2">
       </div>
       <div class="question">
-        <label>3. Solve: 15² − 5² = ?</label><br>
+        <label>3. A number is divisible by both 3 and 4. What is the smallest such number above 10?</label><br>
         <input type="text" name="q3">
       </div>
       <div class="question">
-        <label>4. If a number is divisible by both 3 and 4, it must be divisible by which number?</label><br>
+        <label>4. What is the perimeter of a square with side 9 cm?</label><br>
         <input type="text" name="q4">
       </div>
       <div class="question">
-        <label>5. Simplify: (3/4 + 1/2) − 1/8 = ?</label><br>
+        <label>5. Find the missing number: 18 ÷ ___ = 6</label><br>
         <input type="text" name="q5">
       </div>
       <button type="button" onclick="checkAnswers()">Submit</button>
@@ -751,7 +751,7 @@
 
   <script>
     function checkAnswers() {
-      const answers = ["150", "12", "200", "12", "1.125"];
+      const answers = ["24", "21", "12", "36", "3"];
       let score = 0;
       const form = document.forms['quizForm'];
       for (let i = 0; i < answers.length; i++) {
@@ -760,7 +760,7 @@
           score++;
         }
       }
-      document.getElementById("result").innerText = 
+      document.getElementById("result").innerText =
         "You scored " + score + " out of " + answers.length + ".";
     }
   </script>
