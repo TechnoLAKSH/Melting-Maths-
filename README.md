@@ -933,7 +933,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grade 7 Arithmetic Quiz</title>
+  <title>Grade 8 Arithmetic Quiz</title>
   <style>
     body {
       font-family: Arial, sans-serif;
