@@ -728,6 +728,7 @@
   </style>
 </head>
 <body>
+
   <div class="quiz-container">
     <h1>Grade 6 Arithmetic Quiz (MCQs)</h1>
     <form id="quizForm">
@@ -801,77 +802,134 @@
 </body>
 </html>
 
-xt-orange-500 mb-6">Grade 7 Arithmetic Quiz – Challenging</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade 7 Arithmetic Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 850px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2d3436;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    .question p {
+      font-weight: 600;
+    }
+    label {
+      display: block;
+      margin-left: 20px;
+      margin-bottom: 5px;
+    }
+    button {
+      background-color: #2e86de;
+      color: white;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Grade 7 Arithmetic Quiz (MCQs)</h1>
+    <form id="quizForm">
 
-    <form id="quizForm" class="space-y-6">
-      <div>
-        <p class="font-semibold">1. What is the value of (84 ÷ 6) + (13 × 4) − 5?</p>
-        <input type="radio" name="q1" value="55"> 55<br />
-        <input type="radio" name="q1" value="60"> 60<br />
-        <input type="radio" name="q1" value="61"> 61
+      <div class="question">
+        <p>1. Simplify: (12 + 8) × (5 - 2)</p>
+        <label><input type="radio" name="q1" value="60"> 60</label>
+        <label><input type="radio" name="q1" value="50"> 50</label>
+        <label><input type="radio" name="q1" value="40"> 40</label>
+        <label><input type="radio" name="q1" value="70"> 70</label>
       </div>
 
-      <div>
-        <p class="font-semibold">2. If A = 2 and B = 3, what is the value of (A + B)² − (B − A)²?</p>
-        <input type="radio" name="q2" value="28"> 28<br />
-        <input type="radio" name="q2" value="20"> 20<br />
-        <input type="radio" name="q2" value="16"> 16
+      <div class="question">
+        <p>2. What is the HCF of 18 and 24?</p>
+        <label><input type="radio" name="q2" value="6"> 6</label>
+        <label><input type="radio" name="q2" value="12"> 12</label>
+        <label><input type="radio" name="q2" value="3"> 3</label>
+        <label><input type="radio" name="q2" value="9"> 9</label>
       </div>
 
-      <div>
-        <p class="font-semibold">3. What is the smallest number divisible by 12, 15, and 18?</p>
-        <input type="radio" name="q3" value="180"> 180<br />
-        <input type="radio" name="q3" value="90"> 90<br />
-        <input type="radio" name="q3" value="60"> 60
+      <div class="question">
+        <p>3. Convert 2.5 into a fraction in simplest form.</p>
+        <label><input type="radio" name="q3" value="5/2"> 5/2</label>
+        <label><input type="radio" name="q3" value="25/10"> 25/10</label>
+        <label><input type="radio" name="q3" value="10/4"> 10/4</label>
+        <label><input type="radio" name="q3" value="7/3"> 7/3</label>
       </div>
 
-      <div>
-        <p class="font-semibold">4. Find the value of: 144 − 48 ÷ 4 × 3</p>
-        <input type="radio" name="q4" value="108"> 108<br />
-        <input type="radio" name="q4" value="111"> 111<br />
-        <input type="radio" name="q4" value="120"> 120
+      <div class="question">
+        <p>4. What is 15% of 200?</p>
+        <label><input type="radio" name="q4" value="30"> 30</label>
+        <label><input type="radio" name="q4" value="35"> 35</label>
+        <label><input type="radio" name="q4" value="25"> 25</label>
+        <label><input type="radio" name="q4" value="40"> 40</label>
       </div>
 
-      <div>
-        <p class="font-semibold">5. A number is increased by 20% and then decreased by 25%. What is the net change?</p>
-        <input type="radio" name="q5" value="5% decrease"> 5% decrease<br />
-        <input type="radio" name="q5" value="10% decrease"> 10% decrease<br />
-        <input type="radio" name="q5" value="No change"> No change
+      <div class="question">
+        <p>5. Solve: 2³ × 5</p>
+        <label><input type="radio" name="q5" value="40"> 40</label>
+        <label><input type="radio" name="q5" value="45"> 45</label>
+        <label><input type="radio" name="q5" value="50"> 50</label>
+        <label><input type="radio" name="q5" value="30"> 30</label>
       </div>
 
-      <button type="button" onclick="submitQuiz()" class="mt-4 bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-xl">Submit</button>
+      <div style="text-align:center; margin-top: 20px;">
+        <button type="button" onclick="checkAnswers()">Submit</button>
+      </div>
     </form>
-
-    <div id="result" class="mt-6 text-lg font-semibold text-green-600"></div>
-  </main>
-
-  <footer class="bg-orange-400 text-white text-center py-4 mt-10">
-    <p>&copy; 2025 Mealting Maths. All rights reserved. 🧮</p>
-  </footer>
+    <div id="result"></div>
+  </div>
 
   <script>
-    function submitQuiz() {
-      const correctAnswers = {
+    function checkAnswers() {
+      const answers = {
         q1: "60",
-        q2: "28",
-        q3: "180",
-        q4: "111",
-        q5: "10% decrease"
+        q2: "6",
+        q3: "5/2",
+        q4: "30",
+        q5: "40"
       };
 
       let score = 0;
-      const form = document.forms["quizForm"];
-      for (const key in correctAnswers) {
-        if (form[key].value === correctAnswers[key]) {
+      for (let key in answers) {
+        const selected = document.querySelector('input[name="' + key + '"]:checked');
+        if (selected && selected.value === answers[key]) {
           score++;
         }
       }
 
-      document.getElementById("result").textContent = `You scored ${score}/5!`;
+      document.getElementById("result").innerText = "You scored " + score + " out of 5!";
     }
   </script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
 <html lang="en">
