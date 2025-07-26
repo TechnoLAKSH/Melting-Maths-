@@ -928,129 +928,128 @@
   </script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Grade 8 Arithmetic Quiz</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 8 Arithmetic Quiz – Challenge Your Brain!</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9ff;
       padding: 20px;
-    }
-    .quiz-box {
-      background-color: #fff;
-      max-width: 800px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 0;
+      color: #333;
     }
     h1 {
       text-align: center;
-      color: #2d3436;
+      color: #1d3557;
+      margin-bottom: 30px;
+    }
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #e0f7fa;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .question {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
-    .question p {
-      font-weight: bold;
+    .question h3 {
+      margin-bottom: 10px;
     }
-    label {
-      display: block;
-      margin-left: 20px;
+    input[type="radio"] {
+      margin-right: 10px;
     }
-    button {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 25px;
-      font-size: 16px;
-      background-color: #0984e3;
+    #submit {
+      background-color: #0077b6;
       color: white;
+      padding: 10px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
     #result {
-      text-align: center;
-      font-size: 18px;
-      color: #00b894;
+      margin-top: 20px;
       font-weight: bold;
+      font-size: 18px;
+      color: #2e7d32;
     }
   </style>
 </head>
 <body>
-  <div class="quiz-box">
-    <h1>Grade 7 Arithmetic Quiz (MCQs)</h1>
+  <div class="quiz-container">
+    <h1>Grade 8 Arithmetic Quiz – Challenge Your Brain!</h1>
+
     <form id="quizForm">
-
       <div class="question">
-        <p>1. Simplify: 3(2x - 5) - 4(x + 2)</p>
-        <label><input type="radio" name="q1" value="2x - 23"> 2x - 23</label>
-        <label><input type="radio" name="q1" value="2x + 4"> 2x + 4</label>
-        <label><input type="radio" name="q1" value="6x - 15 - 4x - 8"> 6x - 15 - 4x - 8</label>
-        <label><input type="radio" name="q1" value="10x - 1"> 10x - 1</label>
+        <h3>1. Simplify: (4x - 3)²</h3>
+        <label><input type="radio" name="q1" value="a"> 16x² - 24x + 9</label><br />
+        <label><input type="radio" name="q1" value="b"> 16x² - 9</label><br />
+        <label><input type="radio" name="q1" value="c"> 4x² - 9</label><br />
+        <label><input type="radio" name="q1" value="d"> None of these</label>
       </div>
 
       <div class="question">
-        <p>2. Find the HCF of 72 and 120.</p>
-        <label><input type="radio" name="q2" value="12"> 12</label>
-        <label><input type="radio" name="q2" value="24"> 24</label>
-        <label><input type="radio" name="q2" value="48"> 48</label>
-        <label><input type="radio" name="q2" value="36"> 36</label>
+        <h3>2. If the ratio of boys to girls is 3:5, what percent of the class are girls?</h3>
+        <label><input type="radio" name="q2" value="a"> 60%</label><br />
+        <label><input type="radio" name="q2" value="b"> 62.5%</label><br />
+        <label><input type="radio" name="q2" value="c"> 40%</label><br />
+        <label><input type="radio" name="q2" value="d"> 70%</label>
       </div>
 
       <div class="question">
-        <p>3. What is the value of 2<sup>3</sup> + 3<sup>2</sup>?</p>
-        <label><input type="radio" name="q3" value="17"> 17</label>
-        <label><input type="radio" name="q3" value="16"> 16</label>
-        <label><input type="radio" name="q3" value="18"> 18</label>
-        <label><input type="radio" name="q3" value="15"> 15</label>
+        <h3>3. Solve: 3/4 + 2/3 = ?</h3>
+        <label><input type="radio" name="q3" value="a"> 17/12</label><br />
+        <label><input type="radio" name="q3" value="b"> 6/7</label><br />
+        <label><input type="radio" name="q3" value="c"> 5/7</label><br />
+        <label><input type="radio" name="q3" value="d"> 11/12</label>
       </div>
 
       <div class="question">
-        <p>4. Convert 0.75 to a fraction in simplest form.</p>
-        <label><input type="radio" name="q4" value="3/4"> 3/4</label>
-        <label><input type="radio" name="q4" value="75/100"> 75/100</label>
-        <label><input type="radio" name="q4" value="1/2"> 1/2</label>
-        <label><input type="radio" name="q4" value="2/3"> 2/3</label>
+        <h3>4. A number is increased by 20% and then decreased by 20%. What is the net change?</h3>
+        <label><input type="radio" name="q4" value="a"> No change</label><br />
+        <label><input type="radio" name="q4" value="b"> Increase 4%</label><br />
+        <label><input type="radio" name="q4" value="c"> Decrease 4%</label><br />
+        <label><input type="radio" name="q4" value="d"> Increase 20%</label>
       </div>
 
       <div class="question">
-        <p>5. A man walks 2.5 km in 30 minutes. What is his speed in km/hr?</p>
-        <label><input type="radio" name="q5" value="5"> 5</label>
-        <label><input type="radio" name="q5" value="6"> 6</label>
-        <label><input type="radio" name="q5" value="4"> 4</label>
-        <label><input type="radio" name="q5" value="3"> 3</label>
+        <h3>5. The square root of 324 is:</h3>
+        <label><input type="radio" name="q5" value="a"> 18</label><br />
+        <label><input type="radio" name="q5" value="b"> 17</label><br />
+        <label><input type="radio" name="q5" value="c"> 19</label><br />
+        <label><input type="radio" name="q5" value="d"> 16</label>
       </div>
 
-      <button type="button" onclick="checkAnswers()">Submit</button>
+      <button type="button" id="submit" onclick="calculateScore()">Submit</button>
     </form>
 
     <div id="result"></div>
   </div>
 
   <script>
-    function checkAnswers() {
+    function calculateScore() {
       const answers = {
-        q1: "2x - 23",
-        q2: "24",
-        q3: "17",
-        q4: "3/4",
-        q5: "5"
+        q1: "a",
+        q2: "b",
+        q3: "a",
+        q4: "c",
+        q5: "a"
       };
-
       let score = 0;
-      for (let q in answers) {
-        const selected = document.querySelector('input[name="' + q + '"]:checked');
-        if (selected && selected.value === answers[q]) {
+
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
           score++;
         }
       }
 
-      document.getElementById("result").innerText = "You scored " + score + " out of 5!";
+      document.getElementById("result").innerText = `Your score: ${score} out of 5`;
     }
   </script>
 </body>
