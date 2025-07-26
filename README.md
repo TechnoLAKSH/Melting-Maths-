@@ -805,129 +805,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Grade 7 Arithmetic Quiz</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade 7 Arithmetic Quiz – Test Your Skills!</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background-color: #fefae0;
       padding: 20px;
-    }
-    .quiz-box {
-      background-color: #fff;
-      max-width: 800px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 0;
+      color: #333;
     }
     h1 {
       text-align: center;
-      color: #2d3436;
+      color: #283618;
+      margin-bottom: 30px;
+    }
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #d8f3dc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .question {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
-    .question p {
-      font-weight: bold;
+    .question h3 {
+      margin-bottom: 10px;
     }
-    label {
-      display: block;
-      margin-left: 20px;
+    input[type="radio"] {
+      margin-right: 10px;
     }
-    button {
-      display: block;
-      margin: 20px auto;
-      padding: 10px 25px;
-      font-size: 16px;
-      background-color: #0984e3;
+    #submit {
+      background-color: #606c38;
       color: white;
+      padding: 10px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
     #result {
-      text-align: center;
-      font-size: 18px;
-      color: #00b894;
+      margin-top: 20px;
       font-weight: bold;
+      font-size: 18px;
+      color: #2a9d8f;
     }
   </style>
 </head>
 <body>
-  <div class="quiz-box">
-    <h1>Grade 7 Arithmetic Quiz (MCQs)</h1>
+  <div class="quiz-container">
+    <h1>Grade 7 Arithmetic Quiz – Test Your Skills!</h1>
+
     <form id="quizForm">
-
       <div class="question">
-        <p>1. Simplify: 3(2x - 5) - 4(x + 2)</p>
-        <label><input type="radio" name="q1" value="2x - 23"> 2x - 23</label>
-        <label><input type="radio" name="q1" value="2x + 4"> 2x + 4</label>
-        <label><input type="radio" name="q1" value="6x - 15 - 4x - 8"> 6x - 15 - 4x - 8</label>
-        <label><input type="radio" name="q1" value="10x - 1"> 10x - 1</label>
+        <h3>1. What is the value of 7² - 3²?</h3>
+        <label><input type="radio" name="q1" value="a"> 40</label><br />
+        <label><input type="radio" name="q1" value="b"> 49</label><br />
+        <label><input type="radio" name="q1" value="c"> 16</label><br />
+        <label><input type="radio" name="q1" value="d"> 30</label>
       </div>
 
       <div class="question">
-        <p>2. Find the HCF of 72 and 120.</p>
-        <label><input type="radio" name="q2" value="12"> 12</label>
-        <label><input type="radio" name="q2" value="24"> 24</label>
-        <label><input type="radio" name="q2" value="48"> 48</label>
-        <label><input type="radio" name="q2" value="36"> 36</label>
+        <h3>2. What is the reciprocal of 5/8?</h3>
+        <label><input type="radio" name="q2" value="a"> 8/5</label><br />
+        <label><input type="radio" name="q2" value="b"> -5/8</label><br />
+        <label><input type="radio" name="q2" value="c"> 13/8</label><br />
+        <label><input type="radio" name="q2" value="d"> 3/5</label>
       </div>
 
       <div class="question">
-        <p>3. What is the value of 2<sup>3</sup> + 3<sup>2</sup>?</p>
-        <label><input type="radio" name="q3" value="17"> 17</label>
-        <label><input type="radio" name="q3" value="16"> 16</label>
-        <label><input type="radio" name="q3" value="18"> 18</label>
-        <label><input type="radio" name="q3" value="15"> 15</label>
+        <h3>3. Find the value of: (2 + 3) × 4</h3>
+        <label><input type="radio" name="q3" value="a"> 20</label><br />
+        <label><input type="radio" name="q3" value="b"> 14</label><br />
+        <label><input type="radio" name="q3" value="c"> 24</label><br />
+        <label><input type="radio" name="q3" value="d"> 10</label>
       </div>
 
       <div class="question">
-        <p>4. Convert 0.75 to a fraction in simplest form.</p>
-        <label><input type="radio" name="q4" value="3/4"> 3/4</label>
-        <label><input type="radio" name="q4" value="75/100"> 75/100</label>
-        <label><input type="radio" name="q4" value="1/2"> 1/2</label>
-        <label><input type="radio" name="q4" value="2/3"> 2/3</label>
+        <h3>4. What is 25% of 160?</h3>
+        <label><input type="radio" name="q4" value="a"> 40</label><br />
+        <label><input type="radio" name="q4" value="b"> 35</label><br />
+        <label><input type="radio" name="q4" value="c"> 45</label><br />
+        <label><input type="radio" name="q4" value="d"> 32</label>
       </div>
 
       <div class="question">
-        <p>5. A man walks 2.5 km in 30 minutes. What is his speed in km/hr?</p>
-        <label><input type="radio" name="q5" value="5"> 5</label>
-        <label><input type="radio" name="q5" value="6"> 6</label>
-        <label><input type="radio" name="q5" value="4"> 4</label>
-        <label><input type="radio" name="q5" value="3"> 3</label>
+        <h3>5. If 12 pens cost ₹144, what is the cost of 5 pens?</h3>
+        <label><input type="radio" name="q5" value="a"> ₹50</label><br />
+        <label><input type="radio" name="q5" value="b"> ₹60</label><br />
+        <label><input type="radio" name="q5" value="c"> ₹70</label><br />
+        <label><input type="radio" name="q5" value="d"> ₹72</label>
       </div>
 
-      <button type="button" onclick="checkAnswers()">Submit</button>
+      <button type="button" id="submit" onclick="calculateScore()">Submit</button>
     </form>
 
     <div id="result"></div>
   </div>
 
   <script>
-    function checkAnswers() {
+    function calculateScore() {
       const answers = {
-        q1: "2x - 23",
-        q2: "24",
-        q3: "17",
-        q4: "3/4",
-        q5: "5"
+        q1: "a",
+        q2: "a",
+        q3: "a",
+        q4: "a",
+        q5: "d"
       };
-
       let score = 0;
-      for (let q in answers) {
-        const selected = document.querySelector('input[name="' + q + '"]:checked');
-        if (selected && selected.value === answers[q]) {
+
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
           score++;
         }
       }
 
-      document.getElementById("result").innerText = "You scored " + score + " out of 5!";
+      document.getElementById("result").innerText = `Your score: ${score} out of 5`;
     }
   </script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
