@@ -676,99 +676,100 @@
 </body>
 </html>
 
-
-
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center te<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Grade 6 Arithmetic Quiz</title>
   <style>
     body {
-      background-color: #f0f8ff;
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
+      background-color: #f4f6f9;
       padding: 20px;
     }
-    .container {
+    .quiz-container {
       max-width: 800px;
       margin: auto;
-      background-color: #ffffff;
+      background: white;
       padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h1 {
       text-align: center;
-      color: #1976d2;
+      color: #2c3e50;
     }
     .question {
       margin: 20px 0;
     }
+    .question p {
+      font-weight: bold;
+    }
     label {
       display: block;
-      margin: 5px 0;
+      margin-left: 20px;
+      margin-bottom: 5px;
     }
     button {
-      background-color: #1976d2;
+      background-color: #3498db;
       color: white;
       padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
       font-size: 16px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
     #result {
       margin-top: 20px;
-      font-weight: bold;
       font-size: 18px;
-      color: #2e7d32;
+      font-weight: bold;
+      color: green;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="quiz-container">
     <h1>Grade 6 Arithmetic Quiz (MCQs)</h1>
     <form id="quizForm">
+
       <div class="question">
-        <p>1. What is the HCF of 36 and 48?</p>
-        <label><input type="radio" name="q1" value="6"> 6</label>
-        <label><input type="radio" name="q1" value="12"> 12</label>
-        <label><input type="radio" name="q1" value="18"> 18</label>
-        <label><input type="radio" name="q1" value="24"> 24</label>
+        <p>1. What is the value of 7 × (4 + 2)?</p>
+        <label><input type="radio" name="q1" value="42"> 42</label>
+        <label><input type="radio" name="q1" value="28"> 28</label>
+        <label><input type="radio" name="q1" value="46"> 46</label>
+        <label><input type="radio" name="q1" value="48"> 48</label>
       </div>
 
       <div class="question">
-        <p>2. Solve: 15 + 6 × (2 + 1)</p>
-        <label><input type="radio" name="q2" value="33"> 33</label>
-        <label><input type="radio" name="q2" value="63"> 63</label>
-        <label><input type="radio" name="q2" value="45"> 45</label>
-        <label><input type="radio" name="q2" value="21"> 21</label>
+        <p>2. Find the LCM of 6 and 8.</p>
+        <label><input type="radio" name="q2" value="24"> 24</label>
+        <label><input type="radio" name="q2" value="14"> 14</label>
+        <label><input type="radio" name="q2" value="48"> 48</label>
+        <label><input type="radio" name="q2" value="18"> 18</label>
       </div>
 
       <div class="question">
-        <p>3. Which of these numbers is divisible by both 3 and 4?</p>
-        <label><input type="radio" name="q3" value="18"> 18</label>
-        <label><input type="radio" name="q3" value="24"> 24</label>
+        <p>3. If 35 ÷ 7 = 5, what is 7 × 5?</p>
+        <label><input type="radio" name="q3" value="40"> 40</label>
+        <label><input type="radio" name="q3" value="35"> 35</label>
+        <label><input type="radio" name="q3" value="25"> 25</label>
         <label><input type="radio" name="q3" value="30"> 30</label>
-        <label><input type="radio" name="q3" value="36"> 36</label>
       </div>
 
       <div class="question">
-        <p>4. What is the area of a rectangle with length 12 cm and width 7 cm?</p>
-        <label><input type="radio" name="q4" value="84"> 84 cm²</label>
-        <label><input type="radio" name="q4" value="19"> 19 cm²</label>
-        <label><input type="radio" name="q4" value="95"> 95 cm²</label>
-        <label><input type="radio" name="q4" value="120"> 120 cm²</label>
+        <p>4. Which of these numbers is a prime number?</p>
+        <label><input type="radio" name="q4" value="21"> 21</label>
+        <label><input type="radio" name="q4" value="17"> 17</label>
+        <label><input type="radio" name="q4" value="27"> 27</label>
+        <label><input type="radio" name="q4" value="49"> 49</label>
       </div>
 
       <div class="question">
-        <p>5. What is the value of 5³?</p>
-        <label><input type="radio" name="q5" value="15"> 15</label>
-        <label><input type="radio" name="q5" value="125"> 125</label>
-        <label><input type="radio" name="q5" value="25"> 25</label>
-        <label><input type="radio" name="q5" value="100"> 100</label>
+        <p>5. What is the area of a square with side 9 cm?</p>
+        <label><input type="radio" name="q5" value="81"> 81 cm²</label>
+        <label><input type="radio" name="q5" value="18"> 18 cm²</label>
+        <label><input type="radio" name="q5" value="72"> 72 cm²</label>
+        <label><input type="radio" name="q5" value="90"> 90 cm²</label>
       </div>
 
       <button type="button" onclick="checkAnswers()">Submit</button>
@@ -778,26 +779,27 @@
 
   <script>
     function checkAnswers() {
-      const correctAnswers = {
-        q1: "12",
-        q2: "33",
-        q3: "24",
-        q4: "84",
-        q5: "125"
+      const answers = {
+        q1: "42",
+        q2: "24",
+        q3: "35",
+        q4: "17",
+        q5: "81"
       };
+
       let score = 0;
-      for (let q in correctAnswers) {
-        const selected = document.querySelector('input[name="' + q + '"]:checked');
-        if (selected && selected.value === correctAnswers[q]) {
+      for (let key in answers) {
+        const selected = document.querySelector('input[name="' + key + '"]:checked');
+        if (selected && selected.value === answers[key]) {
           score++;
         }
       }
-      document.getElementById("result").innerText = "You scored " + score + " out of 5.";
+
+      document.getElementById("result").innerText = "You scored " + score + " out of 5!";
     }
   </script>
 </body>
 </html>
-
 
 xt-orange-500 mb-6">Grade 7 Arithmetic Quiz – Challenging</h2>
 
