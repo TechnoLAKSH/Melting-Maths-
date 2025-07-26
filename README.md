@@ -1309,3 +1309,59 @@
   </div>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Mealting Maths</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8e7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e67e22;
+            text-align: center;
+        }
+        h2 {
+            color: #3498db;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+        <h2>✨ Meet the Co-Founder</h2>
+        <p>
+            Hi! I'm <span class="highlight">Laksh Agarwal</span>, a Grade 7 student from <span class="highlight">India</span>. I’m the co-founder of <strong>Mealting Maths</strong> — a free educational website built especially for students from <strong>Grade 1 to 10</strong>. I created this platform because I truly believe that maths doesn’t have to be scary or boring. With colorful quizzes and simple design, learning numbers can actually be fun!
+        </p>
+        <p>
+            I started <strong>Mealting Maths</strong> to give students across India and beyond a place to practice arithmetic in a joyful, stress-free way — and totally free of cost. I enjoy coding, creating websites, and helping friends understand difficult topics.
+        </p>
+        <p>
+            My dream is to become a successful <span class="highlight">entrepreneur</span> one day — someone who builds things that make learning and life easier for everyone. <em>Mealting Maths</em> is my first step toward that dream.
+        </p>
+        <p><strong>Let’s melt the fear of maths — together!</strong></p>
+    </div>
+</body>
+</html>
