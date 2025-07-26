@@ -676,15 +676,18 @@
 </body>
 </html>
 
-<!DOCTYPE html>
+
+
+  <main class="max-w-3xl mx-auto mt-10 p-4">
+    <h2 class="text-3xl text-center te<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Grade 6 Arithmetic Quiz</title>
   <style>
     body {
+      background-color: #f0f8ff;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #e0f7fa;
       margin: 0;
       padding: 20px;
     }
@@ -694,17 +697,21 @@
       background-color: #ffffff;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
     h1 {
       text-align: center;
-      color: #00796b;
+      color: #1976d2;
     }
     .question {
       margin: 20px 0;
     }
+    label {
+      display: block;
+      margin: 5px 0;
+    }
     button {
-      background-color: #00796b;
+      background-color: #1976d2;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -716,34 +723,54 @@
       margin-top: 20px;
       font-weight: bold;
       font-size: 18px;
-      color: #d84315;
+      color: #2e7d32;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Grade 6 Arithmetic Quiz</h1>
+    <h1>Grade 6 Arithmetic Quiz (MCQs)</h1>
     <form id="quizForm">
       <div class="question">
-        <label>1. What is the value of 25 × 4 + 100 ÷ 2?</label><br>
-        <input type="text" name="q1">
+        <p>1. What is the HCF of 36 and 48?</p>
+        <label><input type="radio" name="q1" value="6"> 6</label>
+        <label><input type="radio" name="q1" value="12"> 12</label>
+        <label><input type="radio" name="q1" value="18"> 18</label>
+        <label><input type="radio" name="q1" value="24"> 24</label>
       </div>
+
       <div class="question">
-        <label>2. What is the HCF of 48 and 60?</label><br>
-        <input type="text" name="q2">
+        <p>2. Solve: 15 + 6 × (2 + 1)</p>
+        <label><input type="radio" name="q2" value="33"> 33</label>
+        <label><input type="radio" name="q2" value="63"> 63</label>
+        <label><input type="radio" name="q2" value="45"> 45</label>
+        <label><input type="radio" name="q2" value="21"> 21</label>
       </div>
+
       <div class="question">
-        <label>3. Solve: 15² − 5² = ?</label><br>
-        <input type="text" name="q3">
+        <p>3. Which of these numbers is divisible by both 3 and 4?</p>
+        <label><input type="radio" name="q3" value="18"> 18</label>
+        <label><input type="radio" name="q3" value="24"> 24</label>
+        <label><input type="radio" name="q3" value="30"> 30</label>
+        <label><input type="radio" name="q3" value="36"> 36</label>
       </div>
+
       <div class="question">
-        <label>4. If a number is divisible by both 3 and 4, it must be divisible by which number?</label><br>
-        <input type="text" name="q4">
+        <p>4. What is the area of a rectangle with length 12 cm and width 7 cm?</p>
+        <label><input type="radio" name="q4" value="84"> 84 cm²</label>
+        <label><input type="radio" name="q4" value="19"> 19 cm²</label>
+        <label><input type="radio" name="q4" value="95"> 95 cm²</label>
+        <label><input type="radio" name="q4" value="120"> 120 cm²</label>
       </div>
+
       <div class="question">
-        <label>5. Simplify: (3/4 + 1/2) − 1/8 = ?</label><br>
-        <input type="text" name="q5">
+        <p>5. What is the value of 5³?</p>
+        <label><input type="radio" name="q5" value="15"> 15</label>
+        <label><input type="radio" name="q5" value="125"> 125</label>
+        <label><input type="radio" name="q5" value="25"> 25</label>
+        <label><input type="radio" name="q5" value="100"> 100</label>
       </div>
+
       <button type="button" onclick="checkAnswers()">Submit</button>
     </form>
     <div id="result"></div>
@@ -751,24 +778,28 @@
 
   <script>
     function checkAnswers() {
-      const answers = ["150", "12", "200", "12", "1.125"];
+      const correctAnswers = {
+        q1: "12",
+        q2: "33",
+        q3: "24",
+        q4: "84",
+        q5: "125"
+      };
       let score = 0;
-      const form = document.forms['quizForm'];
-      for (let i = 0; i < answers.length; i++) {
-        const userAnswer = form['q' + (i + 1)].value.trim();
-        if (userAnswer === answers[i]) {
+      for (let q in correctAnswers) {
+        const selected = document.querySelector('input[name="' + q + '"]:checked');
+        if (selected && selected.value === correctAnswers[q]) {
           score++;
         }
       }
-      document.getElementById("result").innerText = 
-        "You scored " + score + " out of " + answers.length + ".";
+      document.getElementById("result").innerText = "You scored " + score + " out of 5.";
     }
   </script>
 </body>
 </html>
 
-  <main class="max-w-3xl mx-auto mt-10 p-4">
-    <h2 class="text-3xl text-center text-orange-500 mb-6">Grade 7 Arithmetic Quiz – Challenging</h2>
+
+xt-orange-500 mb-6">Grade 7 Arithmetic Quiz – Challenging</h2>
 
     <form id="quizForm" class="space-y-6">
       <div>
