@@ -76,6 +76,8 @@
 </body>
 </html>
 
+<a href="googlequiz.html" class="quiz-btn">📚 Take Google Quiz</a>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
