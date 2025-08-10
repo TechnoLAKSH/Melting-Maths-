@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Quiz - Melting Maths</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+        }
+        iframe {
+            border: none;
+            margin-top: 20px;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <h1>📝 Google Quiz</h1>
+        <p>Answer the questions and test your skills!</p>
+    </header>
+
+    <!-- Embedded Google Form -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbSAqK77g_vHiUtSAMlk3mDO5h8outsBMOYkyg-1kW99Y9zA/viewform?embedded=true" 
+            width="640" 
+            height="3209" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+        Loading…
+    </iframe>
+
+    <!-- Back to Home Button -->
+    <br>
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+
+</body>
+</html>
