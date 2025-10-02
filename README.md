@@ -50,42 +50,109 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to Melting Maths 🎉</h1>
-  <p>Select your grade to start your quiz:</p>
-  
-  <select id="gradeSelector">
-    <option value="">-- Select Grade --</option>
-    <option value="grade1.html">Grade 1</option>
-    <option value="grade2.html">Grade 2</option>
-    <option value="grade3.html">Grade 3</option>
-    <option value="grade4.html">Grade 4</option>
-    <option value="grade5.html">Grade 5</option>
-    <option value="grade6.html">Grade 6</option>
-    <option value="grade7.html">Grade 7</option>
-    <option value="grade8.html">Grade 8</option>
-    <option value="grade9.html">Grade 9</option>
-    <option value="grade10.html">Grade 10</option>
-  </select>
-  
-  <br>
-  <button onclick="goToGrade()">Go 🚀</button>
-  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melting Maths - Grade Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7faff;
+    }
+    header {
+      background: #4CAF50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    section {
+      padding: 50px;
+      border-bottom: 2px solid #ddd;
+    }
+    h2 {
+      color: #2d2d86;
+    }
+    select, button {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Melting Maths 🎉</h1>
+    <p>Select your grade to jump directly to the quiz 👇</p>
+    <select id="gradeSelector">
+      <option value="">-- Select Grade --</option>
+      <option value="grade1">Grade 1</option>
+      <option value="grade2">Grade 2</option>
+      <option value="grade3">Grade 3</option>
+      <option value="grade4">Grade 4</option>
+      <option value="grade5">Grade 5</option>
+    </select>
+    <button onclick="goToGrade()">Go 🚀</button>
+  </header>
+
+  <!-- Grade Sections -->
+  <section id="grade1">
+    <h2>Grade 1 Arithmetic Quiz</h2>
+    <p>Q1: 2 + 3 = ?</p>
+    <p>Q2: 5 - 2 = ?</p>
+  </section>
+
+  <section id="grade2">
+    <h2>Grade 2 Arithmetic Quiz</h2>
+    <p>Q1: 15 ÷ 3 = ?</p>
+    <p>Q2: 20 - 8 = ?</p>
+  </section>
+
+  <section id="grade3">
+    <h2>Grade 3 Arithmetic Quiz</h2>
+    <p>Q1: 12 × 3 = ?</p>
+    <p>Q2: 45 ÷ 5 = ?</p>
+  </section>
+
+  <section id="grade4">
+    <h2>Grade 4 Arithmetic Quiz</h2>
+    <p>Q1: 72 ÷ 9 = ?</p>
+    <p>Q2: 15 × 6 = ?</p>
+  </section>
+
+  <section id="grade5">
+    <h2>Grade 5 Arithmetic Quiz</h2>
+    <p>Q1: (12 × 3) + 15 = ?</p>
+    <p>Q2: 100 ÷ (4 × 5) = ?</p>
+  </section>
+
   <script>
     function goToGrade() {
-      const gradePage = document.getElementById("gradeSelector").value;
-      if (gradePage) {
-        window.location.href = gradePage; // teleport to selected grade
+      const grade = document.getElementById("gradeSelector").value;
+      if (grade) {
+        document.getElementById(grade).scrollIntoView({ behavior: "smooth" });
       } else {
         alert("Please select a grade!");
       }
     }
   </script>
+
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
   <title>Grade 1 Arithmetic Quiz</title>
   <style>
