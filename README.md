@@ -16,39 +16,45 @@
   <title>Select Grade | Arithmetic Quiz</title>
   <style>
     body {
-      background-color: #fef6e4;
-      font-family: 'Arial', sans-serif;
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Grade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding-top: 100px;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 40px;
     }
-
     h1 {
-      color: #ff6f61;
-      font-size: 32px;
+      color: #2d2d86;
     }
-
-    select {
+    select, button {
+      font-size: 18px;
       padding: 10px;
-      font-size: 18px;
-      margin-top: 20px;
+      margin: 10px;
     }
-
     button {
-      padding: 10px 20px;
-      font-size: 18px;
-      margin-top: 20px;
-      background-color: #ff6f61;
+      background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 10px;
       cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <h1>Select Your Grade to Start Quiz</h1>
-  <select id="gradeSelect">
-    <option value="">-- Choose Grade --</option>
+  <h1>Welcome to Melting Maths 🎉</h1>
+  <p>Select your grade to start your quiz:</p>
+  
+  <select id="gradeSelector">
+    <option value="">-- Select Grade --</option>
     <option value="grade1.html">Grade 1</option>
     <option value="grade2.html">Grade 2</option>
     <option value="grade3.html">Grade 3</option>
@@ -59,24 +65,23 @@
     <option value="grade8.html">Grade 8</option>
     <option value="grade9.html">Grade 9</option>
     <option value="grade10.html">Grade 10</option>
-  </select><br>
-
-  <button onclick="goToQuiz()">Start Quiz</button>
-
+  </select>
+  
+  <br>
+  <button onclick="goToGrade()">Go 🚀</button>
+  
   <script>
-    function goToQuiz() {
-      const selected = document.getElementById("gradeSelect").value;
-      if (selected) {
-        window.location.href = selected;
+    function goToGrade() {
+      const gradePage = document.getElementById("gradeSelector").value;
+      if (gradePage) {
+        window.location.href = gradePage; // teleport to selected grade
       } else {
-        alert("Please select a grade first!");
+        alert("Please select a grade!");
       }
     }
   </script>
 </body>
 </html>
-
-<a href="googlequiz.html" class="quiz-btn">📚 Take Google Quiz</a>
 
 <!DOCTYPE html>
 <html lang="en">
