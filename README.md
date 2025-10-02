@@ -2,9 +2,9 @@
 <section class="bg-orange-100 py-6 mt-10">
   <div class="max-w-4xl mx-auto text-center">
     <div class="text-center mt-8">
-  <p class="mt-4 text-lg font-semibold text-gray-700">Laksh Agarwal<br><span class="text-sm text-gray-500">Co-Founder</span></p>
+  <p class="mt-4 text-lg font-semibold text-gray-700">Laksh Agarwal<br><span class="text-sm text-gray-500">Founder</span></p>
 </div>
-    <img src="laksh.jpg" alt="Co-Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
+    <img src="laksh.jpg" alt="Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
     <h2 class="text-2xl text-orange-600 font-bold">👤 Co-Founder</h2>
     <p class="text-xl mt-2 text-gray-800">Laksh Agarwal</p>
   </div>
@@ -1426,9 +1426,9 @@
 <body>
     <div class="container">
         <h1>About Us</h1>
-        <h2>✨ Meet the Co-Founder</h2>
+        <h2>✨ Meet the Founder</h2>
         <p>
-            Hi! I'm <span class="highlight">Laksh Agarwal</span>, a Grade 7 student from <span class="highlight">India</span>. I’m the co-founder of <strong>Mealting Maths</strong> — a free educational website built especially for students from <strong>Grade 1 to 10</strong>. I created this platform because I truly believe that maths doesn’t have to be scary or boring. With colorful quizzes and simple design, learning numbers can actually be fun!
+            Hi! I'm <span class="highlight">Laksh Agarwal</span>, a Grade 7 student from <span class="highlight">India</span>. I’m the founder of <strong>Mealting Maths</strong> — a free educational website built especially for students from <strong>Grade 1 to 10</strong>. I created this platform because I truly believe that maths doesn’t have to be scary or boring. With colorful quizzes and simple design, learning numbers can actually be fun!
         </p>
         <p>
             I started <strong>Mealting Maths</strong> to give students across India and beyond a place to practice arithmetic in a joyful, stress-free way — and totally free of cost. I enjoy coding, creating websites, and helping friends understand difficult topics.
