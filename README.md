@@ -9,67 +9,6 @@
     <p class="text-xl mt-2 text-gray-800">Laksh Agarwal</p>
   </div>
 </section>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
- 
-      margin: 0;
-      padding: 0;
-      background: #f7faff;
-    }
-    header {
-      background: #4CAF50;
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-    section {
-      padding: 50px;
-      border-bottom: 2px solid #ddd;
-    }
-    h2 {
-      color: #2d2d86;
-    }
-    select, button {
-      font-size: 18px;
-      padding: 10px;
-      margin: 10px;
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Grade Selector -->
-  <header>
-    <h1>Welcome to Melting Maths 🎉</h1>
-    <p>Select your grade to jump directly to your quiz 👇</p>
-    <select id="gradeSelector">
-      <option value="">-- Select Grade --</option>
-      <option value="grade1quiz">Grade 1</option>
-      <option value="grade2quiz">Grade 2</option>
-      <option value="grade3quiz">Grade 3</option>
-      <option value="grade4quiz">Grade 4</option>
-      <option value="grade5quiz">Grade 5</option>
-      <option value="grade6quiz">Grade 6</option>
-      <option value="grade7quiz">Grade 7</option>
-      <option value="grade8quiz">Grade 8</option>
-      <option value="grade9quiz">Grade 9</option>
-      <option value="grade10quiz">Grade 10</option>
-    </select>
-    <button onclick="goToGrade()">Go 🚀</button>
-  </header>
-   
- <section id="grade1quiz">
   <meta charset="UTF-8">
   <title>Grade 1 Arithmetic Quiz</title>
   <style>
