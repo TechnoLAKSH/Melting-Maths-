@@ -1,1341 +1,607 @@
-# Melting-Maths-
-<section class="bg-orange-100 py-6 mt-10">
-  <div class="max-w-4xl mx-auto text-center">
-    <div class="text-center mt-8">
-  <p class="mt-4 text-lg font-semibold text-gray-700">Laksh Agarwal<br><span class="text-sm text-gray-500">Founder</span></p>
-</div>
-    <img src="laksh.jpg" alt="Founder Laksh Agarwal" class="w-40 h-40 rounded-full mx-auto shadow-lg" />
-    <h2 class="text-2xl text-orange-600 font-bold">👤 Co-Founder</h2>
-    <p class="text-xl mt-2 text-gray-800">Laksh Agarwal</p>
-  </div>
-</section>
-  <meta charset="UTF-8">
-  <title>Grade 1 Arithmetic Quiz</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', sans-serif;
-      background-color: #fffbe6;
-      color: #333;
-      padding: 20px;
-    }
-    h1 {
-      color: #ff6600;
-      text-align: center;
-    }
-    .question {
-      margin: 20px 0;
-      background-color: #f9f3d2;
-      padding: 15px;
-      border-radius: 12px;
-      border: 2px solid #ffd966;
-    }
-    .question label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #006600;
-    }
-  </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mealting Maths — Fun Arithmetic (Grade 1–10)</title>
+
+<!--
+  Single-file site:
+  - Animated boundary (gradient + moving dashes)
+  - Left & right floating "characters" (image fallback to SVG)
+  - Grade selector that teleports to sections (same page)
+  - Sample quiz sections for Grade 1..10 (replace with your questions)
+  - Friendly, colorful and slightly cartoon-themed style
+-->
+
+<style>
+  :root{
+    --bg:#f7fbff;
+    --card:#ffffff;
+    --accent1:#ff6f3c;
+    --accent2:#00b7c2;
+    --muted:#6b7280;
+    --green:#23c48a;
+    --shadow: 0 8px 24px rgba(15,23,42,0.08);
+    --corner: 20px;
+  }
+
+  /* PAGE BOUNDARY (animated gradient + dashed border) */
+  html,body{height:100%; margin:0; background:var(--bg); font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+  .page-frame{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:36px;
+    box-sizing:border-box;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* animated outer ring */
+  .frame-border {
+    position:absolute;
+    inset:8px;
+    border-radius:28px;
+    pointer-events:none;
+    z-index:0;
+    padding:6px;
+    box-sizing:border-box;
+    background:linear-gradient(90deg, rgba(255,111,60,0.12), rgba(0,183,194,0.08) 40%, rgba(255,207,102,0.06));
+    filter:drop-shadow(0 6px 24px rgba(0,0,0,0.06));
+    animation: slow-rotate 14s linear infinite;
+  }
+  .frame-border::after{
+    content:"";
+    position:absolute; inset:6px; border-radius:20px;
+    border: 4px dashed rgba(0,0,0,0.06);
+    mix-blend-mode: multiply;
+  }
+  @keyframes slow-rotate { from {transform: rotate(0);} to { transform: rotate(360deg);} }
+
+  /* Container card */
+  .site {
+    width:100%;
+    max-width:1100px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96));
+    border-radius:var(--corner);
+    box-shadow:var(--shadow);
+    z-index:1;
+    overflow:hidden;
+    position:relative;
+  }
+
+  /* Header */
+  header {
+    display:flex;
+    gap:16px;
+    align-items:center;
+    padding:22px 28px;
+    background: linear-gradient(90deg, rgba(255,111,60,0.08), rgba(0,183,194,0.06));
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+  }
+  .brand {
+    display:flex; gap:12px; align-items:center;
+  }
+  .logo {
+    width:64px; height:64px; border-radius:14px;
+    background: linear-gradient(135deg,var(--accent1),var(--accent2));
+    display:flex; align-items:center; justify-content:center;
+    color:white; font-weight:800; font-size:22px; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+  .brand h1 { margin:0; font-size:20px; color:#0f1724;}
+  .brand p { margin:0; color:var(--muted); font-size:13px; }
+
+  nav { margin-left:auto; display:flex; gap:8px; align-items:center; }
+  nav a { text-decoration:none; padding:8px 12px; border-radius:10px; color:#0f1724; font-weight:600; background:transparent; transition:all .2s ease; }
+  nav a:hover { background: rgba(0,0,0,0.04); transform:translateY(-2px); }
+
+  /* Header action buttons */
+  .btn {
+    background:var(--accent1); color:white; padding:9px 14px; border-radius:10px; text-decoration:none; font-weight:700; box-shadow: 0 6px 12px rgba(255,111,60,0.12);
+  }
+  .btn.secondary { background: var(--accent2); box-shadow: 0 6px 12px rgba(0,183,194,0.12); }
+
+  /* top-floating characters (left/right) */
+  .character {
+    position:absolute; top:24px; width:120px; height:120px; z-index:2; pointer-events:none;
+    transform-origin:center;
+    animation: floaty 6s ease-in-out infinite;
+  }
+  .character.left { left:-10px; }
+  .character.right { right:-10px; animation-delay: 1.2s; }
+  @keyframes floaty { 0% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-14px) rotate(3deg);} 100% { transform: translateY(0) rotate(-3deg);} }
+
+  /* Layout body */
+  .content {
+    padding:28px;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:20px;
+  }
+
+  /* hero panel */
+  .hero {
+    display:flex;
+    gap:20px;
+    align-items:center;
+    padding:22px;
+    border-radius:14px;
+    background: linear-gradient(90deg, rgba(255,239,225,0.8), rgba(227,247,255,0.8));
+  }
+  .hero-left { flex:1; }
+  .hero-right { width:260px; display:flex; align-items:center; justify-content:center; }
+
+  .intro { font-size:18px; color:#053047; margin:10px 0 0 0; line-height:1.5; }
+  .tag { background: rgba(255,111,60,0.12); color:var(--accent1); display:inline-block; padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px; }
+
+  /* grade selector card */
+  .grade-card {
+    margin-top:12px;
+    background: white;
+    padding:12px;
+    border-radius:12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .grade-card select {
+    padding:10px 12px; border-radius:8px; border:1px solid #e6edf2; font-size:16px;
+  }
+  .grade-card button { padding:10px 16px; border-radius:10px; border:none; cursor:pointer; background:var(--accent1); color:white; font-weight:700; }
+
+  /* quizzes grid */
+  .quizzes {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap:18px;
+  }
+
+  .quiz-section {
+    background:var(--card);
+    padding:18px;
+    border-radius:14px;
+    box-shadow: 0 8px 20px rgba(12,18,30,0.04);
+    position:relative;
+    overflow:visible;
+  }
+
+  .quiz-section h3 { margin:0 0 8px 0; color:#0f1724; }
+  .quiz-box { background: linear-gradient(180deg,#fff,#fbfdff); border-radius:12px; padding:12px; border:1px solid rgba(0,0,0,0.03); }
+  .question { margin:10px 0; font-weight:600; }
+
+  /* submit/button style inside quizzes */
+  .submit-btn {
+    display:inline-block; margin-top:10px; padding:8px 12px; border-radius:10px; background:var(--green); color:white; font-weight:700; border:none; cursor:pointer;
+  }
+
+  /* small footer */
+  footer { padding:18px; text-align:center; color:var(--muted); font-size:13px; }
+
+  /* responsive */
+  @media (max-width:720px){
+    .hero { flex-direction:column; align-items:flex-start; }
+    .hero-right { width:100%; }
+    .character { display:none; }
+  }
+
+  /* little entrance animation for cards */
+  .quiz-section { transform: translateY(8px); opacity:0; animation: cardIn .6s ease forwards; }
+  .quiz-section:nth-child(1){ animation-delay: 0.05s }
+  .quiz-section:nth-child(2){ animation-delay: 0.1s }
+  .quiz-section:nth-child(3){ animation-delay: 0.15s }
+  .quiz-section:nth-child(4){ animation-delay: 0.2s }
+  @keyframes cardIn { to { transform:none; opacity:1; } }
+
+  /* playful sparkle near logo */
+  .sparkle { width:8px; height:8px; background: #fff; border-radius:50%; box-shadow: 0 0 10px rgba(255,255,255,0.9); position:relative; left:6px; top:-8px; animation: blink 2s infinite; }
+  @keyframes blink { 0%,100%{ opacity:0.2 } 50%{ opacity:1 } }
+
+  /* small style for answers */
+  .options label { display:block; padding:6px 8px; border-radius:8px; margin:6px 0; background:rgba(0,0,0,0.03); cursor:pointer; }
+  .options input { margin-right:8px; }
+
+</style>
 </head>
 <body>
 
-<h1>Grade 1 Arithmetic Quiz</h1>
+<div class="page-frame">
+  <div class="frame-border"></div>
 
-<form id="quizForm">
-  <div class="question">
-    <label>1. What is 2 + 3?</label>
-    <input type="radio" name="q1" value="4"> 4<br>
-    <input type="radio" name="q1" value="5"> 5<br>
-    <input type="radio" name="q1" value="6"> 6
+  <div class="site" role="main">
+
+    <!-- animated characters: left & right.
+         If you have real images place them in images/shinchan.png and images/doraemon.png.
+         The JS will try to load those images; if not found, built-in SVG avatars appear. -->
+    <div class="character left" id="char-left" aria-hidden="true"></div>
+    <div class="character right" id="char-right" aria-hidden="true"></div>
+
+    <header>
+      <div class="brand">
+        <div class="logo">MM</div>
+        <div>
+          <h1>Mealting Maths</h1>
+          <p>Colourful arithmetic quizzes — Grades 1 to 10</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#grades" onclick="document.getElementById('selector').scrollIntoView({behavior:'smooth'})">Choose Grade</a>
+        <a href="#quizzes" onclick="document.getElementById('quizzes').scrollIntoView({behavior:'smooth'})">All Quizzes</a>
+        <a href="#feedback" onclick="document.getElementById('feedback').scrollIntoView({behavior:'smooth'})">Feedback</a>
+        <a class="btn" href="#about" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About Us</a>
+      </nav>
+    </header>
+
+    <div class="content">
+
+      <!-- HERO -->
+      <section class="hero" id="home" aria-labelledby="site-intro">
+        <div class="hero-left">
+          <span class="tag">Free • Colorful • Student-friendly</span>
+          <h2 id="site-intro" style="margin:10px 0 6px 0; font-size:22px">Make arithmetic fun — one quiz at a time</h2>
+          <p class="intro">Mealting Maths has short, smart quizzes for Grades 1–10. Pick your grade and jump straight to the questions — no logins, no fees.</p>
+
+          <div class="grade-card" id="selector" style="margin-top:12px;">
+            <select id="gradeSelectInline" aria-label="Select grade">
+              <option value="">-- Choose Grade --</option>
+              <option value="grade1">Grade 1</option>
+              <option value="grade2">Grade 2</option>
+              <option value="grade3">Grade 3</option>
+              <option value="grade4">Grade 4</option>
+              <option value="grade5">Grade 5</option>
+              <option value="grade6">Grade 6</option>
+              <option value="grade7">Grade 7</option>
+              <option value="grade8">Grade 8</option>
+              <option value="grade9">Grade 9</option>
+              <option value="grade10">Grade 10</option>
+            </select>
+            <button id="goBtn" onclick="jumpToGrade()">Go 🚀</button>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- decorative panel -->
+          <div style="width:220px; height:160px; border-radius:12px; background:linear-gradient(180deg,#fff,#fff8f0); display:flex; align-items:center; justify-content:center; box-shadow: 0 8px 20px rgba(0,0,0,0.06);">
+            <div style="text-align:center;">
+              <div style="font-weight:800; font-size:28px; color:var(--accent1)">Take a Quiz</div>
+              <div style="color:var(--muted); font-size:13px; margin-top:6px;">Quick, timed-free practice</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIZZES GRID -->
+      <section id="quizzes" class="quizzes" aria-label="All quizzes">
+
+        <!-- Grade sections: each has id: grade1 ... grade10 -->
+        <!-- Grade 1 -->
+        <article class="quiz-section" id="grade1" tabindex="-1" aria-labelledby="g1title">
+          <h3 id="g1title">Grade 1 — Mini Quiz</h3>
+          <div class="quiz-box">
+            <div class="question">1) 2 + 3 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g1q1" value="4">4</label>
+              <label><input type="radio" name="g1q1" value="5">5</label>
+              <label><input type="radio" name="g1q1" value="6">6</label>
+            </div>
+
+            <div class="question">2) Which number comes next: 1,2,3, _ ?</div>
+            <div class="options">
+              <label><input type="radio" name="g1q2" value="4">4</label>
+              <label><input type="radio" name="g1q2" value="5">5</label>
+              <label><input type="radio" name="g1q2" value="6">6</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g1', ['g1q1','g1q2'], ['5','4'], 'g1res')">Submit</button>
+            <div id="g1res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 2 -->
+        <article class="quiz-section" id="grade2" tabindex="-1" aria-labelledby="g2title">
+          <h3 id="g2title">Grade 2 — Mini Quiz</h3>
+          <div class="quiz-box">
+            <div class="question">1) 24 + 13 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g2q1" value="37">37</label>
+              <label><input type="radio" name="g2q1" value="36">36</label>
+              <label><input type="radio" name="g2q1" value="38">38</label>
+            </div>
+
+            <div class="question">2) Value of 5 in 452 is?</div>
+            <div class="options">
+              <label><input type="radio" name="g2q2" value="500">500</label>
+              <label><input type="radio" name="g2q2" value="50">50</label>
+              <label><input type="radio" name="g2q2" value="5">5</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g2', ['g2q1','g2q2'], ['37','50'], 'g2res')">Submit</button>
+            <div id="g2res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 3 -->
+        <article class="quiz-section" id="grade3" tabindex="-1" aria-labelledby="g3title">
+          <h3 id="g3title">Grade 3 — Mini Quiz</h3>
+          <div class="quiz-box">
+            <div class="question">1) 45 ÷ 5 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g3q1" value="9">9</label>
+              <label><input type="radio" name="g3q1" value="8">8</label>
+            </div>
+            <div class="question">2) 7 × 8 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g3q2" value="56">56</label>
+              <label><input type="radio" name="g3q2" value="54">54</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g3', ['g3q1','g3q2'], ['9','56'], 'g3res')">Submit</button>
+            <div id="g3res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 4 -->
+        <article class="quiz-section" id="grade4" tabindex="-1" aria-labelledby="g4title">
+          <h3 id="g4title">Grade 4 — Mini Quiz</h3>
+          <div class="quiz-box">
+            <div class="question">1) 23 × 4 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g4q1" value="92">92</label>
+              <label><input type="radio" name="g4q1" value="82">82</label>
+            </div>
+            <div class="question">2) 378 + 245 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g4q2" value="623">623</label>
+              <label><input type="radio" name="g4q2" value="613">613</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g4', ['g4q1','g4q2'], ['92','623'], 'g4res')">Submit</button>
+            <div id="g4res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 5 -->
+        <article class="quiz-section" id="grade5" tabindex="-1" aria-labelledby="g5title">
+          <h3 id="g5title">Grade 5 — Mini Quiz</h3>
+          <div class="quiz-box">
+            <div class="question">1) LCM of 12 and 18?</div>
+            <div class="options">
+              <label><input type="radio" name="g5q1" value="36">36</label>
+              <label><input type="radio" name="g5q1" value="24">24</label>
+            </div>
+            <div class="question">2) 35% of 200 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g5q2" value="70">70</label>
+              <label><input type="radio" name="g5q2" value="65">65</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g5', ['g5q1','g5q2'], ['36','70'], 'g5res')">Submit</button>
+            <div id="g5res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 6 -->
+        <article class="quiz-section" id="grade6" tabindex="-1" aria-labelledby="g6title">
+          <h3 id="g6title">Grade 6 — Mini Quiz</h3>
+          <div class="quiz-box">
+            <div class="question">1) HCF of 36 and 48?</div>
+            <div class="options">
+              <label><input type="radio" name="g6q1" value="12">12</label>
+              <label><input type="radio" name="g6q1" value="6">6</label>
+            </div>
+            <div class="question">2) 5 × (2 + 3) − 4 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g6q2" value="21">21</label>
+              <label><input type="radio" name="g6q2" value="18">18</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g6', ['g6q1','g6q2'], ['12','21'], 'g6res')">Submit</button>
+            <div id="g6res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 7 -->
+        <article class="quiz-section" id="grade7" tabindex="-1" aria-labelledby="g7title">
+          <h3 id="g7title">Grade 7 — Mini Quiz</h3>
+          <div class="quiz-box">
+            <div class="question">1) Simplify: (3² × 2³) ÷ 6 = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g7q1" value="12">12</label>
+              <label><input type="radio" name="g7q1" value="24">24</label>
+            </div>
+            <div class="question">2) Probability: 5 red, 3 blue, 2 green. P(red) = ?</div>
+            <div class="options">
+              <label><input type="radio" name="g7q2" value="1/2">1/2</label>
+              <label><input type="radio" name="g7q2" value="5/10">5/10</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g7', ['g7q1','g7q2'], ['12','1/2'], 'g7res')">Submit</button>
+            <div id="g7res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 8 -->
+        <article class="quiz-section" id="grade8" tabindex="-1" aria-labelledby="g8title">
+          <h3 id="g8title">Grade 8 — Challenge</h3>
+          <div class="quiz-box">
+            <div class="question">1) Simplify: (4x - 3)² → choose correct expanded form?</div>
+            <div class="options">
+              <label><input type="radio" name="g8q1" value="16x² - 24x + 9">16x² - 24x + 9</label>
+              <label><input type="radio" name="g8q1" value="16x² - 9">16x² - 9</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g8', ['g8q1'], ['16x² - 24x + 9'], 'g8res')">Submit</button>
+            <div id="g8res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 9 -->
+        <article class="quiz-section" id="grade9" tabindex="-1" aria-labelledby="g9title">
+          <h3 id="g9title">Grade 9 — Test Your Logic</h3>
+          <div class="quiz-box">
+            <div class="question">1) Solve x² + 5x + 6 = 0; roots are?</div>
+            <div class="options">
+              <label><input type="radio" name="g9q1" value="-2,-3">-2, -3</label>
+              <label><input type="radio" name="g9q1" value="2,3">2, 3</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g9', ['g9q1'], ['-2,-3'], 'g9res')">Submit</button>
+            <div id="g9res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+        <!-- Grade 10 -->
+        <article class="quiz-section" id="grade10" tabindex="-1" aria-labelledby="g10title">
+          <h3 id="g10title">Grade 10 — Final Boss</h3>
+          <div class="quiz-box">
+            <div class="question">1) If x² − 9x + 20 = 0, roots are?</div>
+            <div class="options">
+              <label><input type="radio" name="g10q1" value="4,5">4, 5</label>
+              <label><input type="radio" name="g10q1" value="2,10">2, 10</label>
+            </div>
+
+            <button class="submit-btn" onclick="checkScore('g10', ['g10q1'], ['4,5'], 'g10res')">Submit</button>
+            <div id="g10res" style="margin-top:8px; font-weight:700;"></div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Feedback / About -->
+      <section id="feedback" class="quiz-section" style="border-radius:14px;">
+        <h3>Feedback</h3>
+        <p>We use Google Forms for feedback (embedded). Put your form link into the iframe src below to enable it on your site.</p>
+        <div style="border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.04);">
+          <iframe id="feedbackFrame" src="https://docs.google.com/forms/d/e/1FAIpQLSf8zt6PB5Fz2ZlhWNwRFdu_ED9dGMgbzNrli7twqx-nB0AlVA/viewform?embedded=true" width="100%" height="450" style="border:0;"></iframe>
+        </div>
+      </section>
+
+      <section id="about" class="quiz-section" style="border-radius:14px;">
+        <h3>About Mealting Maths</h3>
+        <p>Mealting Maths is built by <strong>Laksh Agarwal</strong> (Grade 7). The site is free and focused on arithmetic practice for Grades 1–10. My dream is to become an entrepreneur and make learning fun for everyone!</p>
+      </section>
+
+    </div>
+
+    <footer>
+      © Mealting Maths • Free for students • Built with ❤️ by Laksh
+    </footer>
+
   </div>
-
-  <div class="question">
-    <label>2. What is 7 - 4?</label>
-    <input type="radio" name="q2" value="2"> 2<br>
-    <input type="radio" name="q2" value="3"> 3<br>
-    <input type="radio" name="q2" value="4"> 4
-  </div>
-
-  <div class="question">
-    <label>3. What comes after 8?</label>
-    <input type="radio" name="q3" value="9"> 9<br>
-    <input type="radio" name="q3" value="7"> 7<br>
-    <input type="radio" name="q3" value="6"> 6
-  </div> 
-
-  <div class="question">
-    <label>4. What is 5 + 0?</label>
-    <input type="radio" name="q4" value="5"> 5<br>
-    <input type="radio" name="q4" value="0"> 0<br>
-    <input type="radio" name="q4" value="1"> 1
-  </div>
-
-  <div class="question">
-    <label>5. What is 10 - 5?</label>
-    <input type="radio" name="q5" value="4"> 4<br>
-    <input type="radio" name="q5" value="5"> 5<br>
-    <input type="radio" name="q5" value="6"> 6
-  </div>
-
-  <button type="button" onclick="checkAnswers()">Submit</button>
-</form>
-
-<div id="result"></div>
+</div>
 
 <script>
-  function checkAnswers() {
-    let correct = 0;
-    if (document.querySelector('input[name="q1"]:checked')?.value === "5") correct++;
-    if (document.querySelector('input[name="q2"]:checked')?.value === "3") correct++;
-    if (document.querySelector('input[name="q3"]:checked')?.value === "9") correct++;
-    if (document.querySelector('input[name="q4"]:checked')?.value === "5") correct++;
-    if (document.querySelector('input[name="q5"]:checked')?.value === "5") correct++;
+/* ---------- Character rendering:
+   - Try to load images/images named shinchan.png and doraemon.png
+   - If available, use them. If not, fall back to simple SVG avatars created on the fly.
+*/
 
-    document.getElementById("result").textContent = 
-      "You got " + correct + " out of 5 correct!";
+function createSVGAvatar(kind){
+  // returns an HTML string for a simple, original, friendly avatar (not copyrighted)
+  if(kind === 'shin'){
+    return `
+      <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#ff9d6b"/></linearGradient></defs>
+        <rect width="120" height="120" rx="18" fill="url(#g1)"/>
+        <circle cx="60" cy="44" r="20" fill="#fff7e6" />
+        <circle cx="50" cy="40" r="3" fill="#232323" /><circle cx="70" cy="40" r="3" fill="#232323" />
+        <path d="M48 52 q12 12 24 0" stroke="#c14b2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="30" y="76" width="60" height="18" rx="6" fill="#fff" opacity="0.6"/>
+        <text x="60" y="90" text-anchor="middle" font-weight="800" font-size="12" fill="#b94e28">Shin</text>
+      </svg>`;
+  } else { // dora style
+    return `
+      <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#9ee7ff"/><stop offset="1" stop-color="#67d0e6"/></linearGradient></defs>
+        <rect width="120" height="120" rx="18" fill="url(#g2)"/>
+        <circle cx="60" cy="46" r="26" fill="#fff"/>
+        <circle cx="48" cy="42" r="3" fill="#111"/><circle cx="72" cy="42" r="3" fill="#111"/>
+        <path d="M48 56 q12 12 24 0" stroke="#0b7285" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <rect x="30" y="76" width="60" height="18" rx="6" fill="#fff" opacity="0.6"/>
+        <text x="60" y="90" text-anchor="middle" font-weight="800" font-size="12" fill="#046b79">Dora</text>
+      </svg>`;
   }
+}
+
+function loadCharacterElements() {
+  const left = document.getElementById('char-left');
+  const right = document.getElementById('char-right');
+
+  // Try to load external images (if you placed files at images/shinchan.png & images/doraemon.png)
+  const shinImg = new Image();
+  shinImg.src = 'images/shinchan.png';
+  shinImg.alt = 'Shinchan';
+  shinImg.onload = () => {
+    shinImg.style.width='100%';
+    shinImg.style.height='100%';
+    shinImg.style.objectFit='contain';
+    left.appendChild(shinImg);
+  };
+  shinImg.onerror = () => { left.innerHTML = createSVGAvatar('shin'); };
+
+  const doraImg = new Image();
+  doraImg.src = 'images/doraemon.png';
+  doraImg.alt = 'Doraemon';
+  doraImg.onload = () => {
+    doraImg.style.width='100%';
+    doraImg.style.height='100%';
+    doraImg.style.objectFit='contain';
+    right.appendChild(doraImg);
+  };
+  doraImg.onerror = () => { right.innerHTML = createSVGAvatar('dora'); };
+}
+
+/* Smooth scroll (teleport) to selected grade */
+function jumpToGrade(){
+  const sel = document.getElementById('gradeSelectInline');
+  const val = sel.value;
+  if(!val){ alert('Please choose a grade first 🙂'); return; }
+  const el = document.getElementById(val);
+  if(!el){ alert('That grade is not available yet.'); return; }
+  el.scrollIntoView({behavior:'smooth', block:'start'});
+  // set focus for keyboard users
+  setTimeout(()=> el.focus({preventScroll:true}), 600);
+}
+
+/* Single generic checkScore function
+   - sectionId: used for console/logging
+   - questionNames: array of input name attributes (strings)
+   - correctAnswers: array of strings that exactly match the chosen value(s)
+   - resultId: id of element to show result text
+*/
+function checkScore(sectionId, questionNames, correctAnswers, resultId){
+  let score = 0;
+  for(let i=0;i<questionNames.length;i++){
+    const name = questionNames[i];
+    const sel = document.querySelector(`input[name="${name}"]:checked`);
+    if(!sel) continue;
+    const val = sel.value;
+    if(val === correctAnswers[i]) score++;
+  }
+  const out = document.getElementById(resultId);
+  out.textContent = `You scored ${score} out of ${questionNames.length} ✓`;
+  // small celebratory animation
+  out.style.color = score === questionNames.length ? 'var(--green)' : '#333';
+}
+
+/* QUICK ACCESS: allow top nav grade selector also to teleport */
+document.addEventListener('DOMContentLoaded',()=>{
+  loadCharacterElements();
+
+  // enable pressing Enter on select to jump
+  const sel = document.getElementById('gradeSelectInline');
+  sel.addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ jumpToGrade(); } });
+
+  // progressive reveal: set focusable for sections
+  ['grade1','grade2','grade3','grade4','grade5','grade6','grade7','grade8','grade9','grade10'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.setAttribute('tabindex','-1');
+  });
+});
 </script>
 
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melting Maths - Quiz Selector</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7faff;
-    }
-    header {
-      background: #4CAF50;
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
-    section {
-      padding: 50px;
-      border-bottom: 2px solid #ddd;
-    }
-    h2 {
-      color: #2d2d86;
-    }
-    select, button {
-      font-size: 18px;
-      padding: 10px;
-      margin: 10px;
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Grade Selector -->
-  <header>
-    <h1>Welcome to Melting Maths 🎉</h1>
-    <p>Select your grade to jump directly to your quiz 👇</p>
-    <select id="gradeSelector">
-      <option value="">-- Select Grade --</option>
-      <option value="grade1quiz">Grade 1</option>
-      <option value="grade2quiz">Grade 2</option>
-      <option value="grade3quiz">Grade 3</option>
-      <option value="grade4quiz">Grade 4</option>
-      <option value="grade5quiz">Grade 5</option>
-      <option value="grade6quiz">Grade 6</option>
-      <option value="grade7quiz">Grade 7</option>
-      <option value="grade8quiz">Grade 8</option>
-      <option value="grade9quiz">Grade 9</option>
-      <option value="grade10quiz">Grade 10</option>
-    </select>
-    <button onclick="goToGrade()">Go 🚀</button>
-  </header>
-
-  <!-- Example Quiz Sections -->
-  <section id="grade1quiz">
-    <h2>Grade 1 Arithmetic Quiz</h2>
-    <p>Q1: 2 + 3 = ?</p>
-    <p>Q2: 5 - 2 = ?</p>
-  </section>
-
-  <!-- FULL GRADE 2 QUIZ HERE -->
-  <section id="grade2quiz">
-    <h2>Grade 2 Arithmetic Quiz</h2>
-    <form id="quiz2">
-      <p>Q1: What is 15 ÷ 3?</p>
-      <input type="radio" name="q1" value="3"> 3<br>
-      <input type="radio" name="q1" value="5"> 5<br>
-      <input type="radio" name="q1" value="7"> 7<br>
-
-      <p>Q2: Solve: 20 - 8 = ?</p>
-      <input type="radio" name="q2" value="10"> 10<br>
-      <input type="radio" name="q2" value="12"> 12<br>
-      <input type="radio" name="q2" value="14"> 14<br>
-
-      <p>Q3: What is 6 × 5?</p>
-      <input type="radio" name="q3" value="25"> 25<br>
-      <input type="radio" name="q3" value="30"> 30<br>
-      <input type="radio" name="q3" value="35"> 35<br>
-
-      <p>Q4: Simplify: 50 ÷ 10 = ?</p>
-      <input type="radio" name="q4" value="4"> 4<br>
-      <input type="radio" name="q4" value="5"> 5<br>
-      <input type="radio" name="q4" value="6"> 6<br>
-
-      <p>Q5: What is the sum of 18 + 12?</p>
-      <input type="radio" name="q5" value="28"> 28<br>
-      <input type="radio" name="q5" value="30"> 30<br>
-      <input type="radio" name="q5" value="32"> 32<br>
-
-      <br>
-      <button type="button" onclick="checkGrade2()">Submit</button>
-    </form>
-    <p id="result2"></p>
-  </section>
-
-  <section id="grade3quiz">
-    <h2>Grade 3 Arithmetic Quiz</h2>
-    <p>Q1: 12 × 3 = ?</p>
-    <p>Q2: 45 ÷ 5 = ?</p>
-  </section>
-
-  <script>
-    function goToGrade() {
-      const grade = document.getElementById("gradeSelector").value;
-      if (grade) {
-        document.getElementById(grade).scrollIntoView({ behavior: "smooth" });
-      } else {
-        alert("Please select a grade!");
-      }
-    }
-
-    function checkGrade2() {
-      let score = 0;
-      const answers = {
-        q1: "5",
-        q2: "12",
-        q3: "30",
-        q4: "5",
-        q5: "30"
-      };
-
-      for (let q in answers) {
-        const selected = document.querySelector(`input[name=${q}]:checked`);
-        if (selected && selected.value === answers[q]) {
-          score++;
-        }
-      }
-
-      document.getElementById("result2").innerText =
-        "Your score: " + score + "/5";
-    }
-  </script>
-
-</body>
-</html>
-
-
-<section id="grade3quiz">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Grade 3 Arithmetic Quiz</title>
-  <style>
-    body {
-      background-color: #fff8e1;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 30px;
-      text-align: center;
-    }
-    h1 {
-      color: #ef6c00;
-    }
-    .question {
-      background: #ffffff;
-      border: 2px solid #ffb74d;
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 600px;
-      text-align: left;
-    }
-    input[type="radio"] {
-      margin: 10px;
-    }
-    button {
-      background-color: #ef6c00;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    button:hover {
-      background-color: #e65100;
-    }
-    #score {
-      font-size: 20px;
-      color: #2e7d32;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Grade 3 Arithmetic Quiz</h1>
-
-  <form id="quizForm">
-    <div class="question">
-      <p>1. What is 45 ÷ 5?</p>
-      <label><input type="radio" name="q1" value="a"> 9</label><br>
-      <label><input type="radio" name="q1" value="b"> 8</label><br>
-      <label><input type="radio" name="q1" value="c"> 10</label>
-    </div>
-
-    <div class="question">
-      <p>2. What is the sum of 345 and 276?</p>
-      <label><input type="radio" name="q2" value="a"> 621</label><br>
-      <label><input type="radio" name="q2" value="b"> 611</label><br>
-      <label><input type="radio" name="q2" value="c"> 620</label>
-    </div>
-
-    <div class="question">
-      <p>3. What is 100 less than 953?</p>
-      <label><input type="radio" name="q3" value="a"> 863</label><br>
-      <label><input type="radio" name="q3" value="b"> 853</label><br>
-      <label><input type="radio" name="q3" value="c"> 843</label>
-    </div>
-
-    <div class="question">
-      <p>4. Multiply: 7 × 8</p>
-      <label><input type="radio" name="q4" value="a"> 54</label><br>
-      <label><input type="radio" name="q4" value="b"> 56</label><br>
-      <label><input type="radio" name="q4" value="c"> 64</label>
-    </div>
-
-    <div class="question">
-      <p>5. What is the place value of 2 in 524?</p>
-      <label><input type="radio" name="q5" value="a"> 2</label><br>
-      <label><input type="radio" name="q5" value="b"> 20</label><br>
-      <label><input type="radio" name="q5" value="c"> 200</label>
-    </div>
-
-    <button type="button" onclick="checkAnswers()">Submit</button>
-    <div id="score"></div>
-  </form>
-
-  <script>
-    function checkAnswers() {
-      let score = 0;
-      const answers = {
-        q1: 'a',
-        q2: 'a',
-        q3: 'b',
-        q4: 'b',
-        q5: 'b'
-      };
-
-      for (let q in answers) {
-        const selected = document.querySelector('input[name=' + q + ']:checked');
-        if (selected && selected.value === answers[q]) {
-          score++;
-        }
-      }
-
-      document.getElementById("score").innerText = "You scored " + score + " out of 5!";
-    }
-  </script>
-</body>
-</html>
-
-<section id="grade4quiz">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Grade 4 Arithmetic Quiz</title>
-  <style>
-    body {
-      background-color: #e1f5fe;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 30px;
-      text-align: center;
-    }
-    h1 {
-      color: #0277bd;
-    }
-    .question {
-      background: #ffffff;
-      border: 2px solid #4fc3f7;
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 600px;
-      text-align: left;
-    }
-    input[type="radio"] {
-      margin: 10px;
-    }
-    button {
-      background-color: #0288d1;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    button:hover {
-      background-color: #01579b;
-    }
-    #score {
-      font-size: 20px;
-      color: #2e7d32;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Grade 4 Arithmetic Quiz</h1>
-
-  <form id="quizForm">
-    <div class="question">
-      <p>1. What is the product of 23 × 4?</p>
-      <label><input type="radio" name="q1" value="a"> 82</label><br>
-      <label><input type="radio" name="q1" value="b"> 92</label><br>
-      <label><input type="radio" name="q1" value="c"> 86</label>
-    </div>
-
-    <div class="question">
-      <p>2. What is the value of 378 + 245?</p>
-      <label><input type="radio" name="q2" value="a"> 623</label><br>
-      <label><input type="radio" name="q2" value="b"> 613</label><br>
-      <label><input type="radio" name="q2" value="c"> 633</label>
-    </div>
-
-    <div class="question">
-      <p>3. What is 1000 - 475?</p>
-      <label><input type="radio" name="q3" value="a"> 525</label><br>
-      <label><input type="radio" name="q3" value="b"> 535</label><br>
-      <label><input type="radio" name="q3" value="c"> 545</label>
-    </div>
-
-    <div class="question">
-      <p>4. Which of the following is a multiple of 9?</p>
-      <label><input type="radio" name="q4" value="a"> 27</label><br>
-      <label><input type="radio" name="q4" value="b"> 26</label><br>
-      <label><input type="radio" name="q4" value="c"> 25</label>
-    </div>
-
-    <div class="question">
-      <p>5. What is the place value of 6 in the number 763?</p>
-      <label><input type="radio" name="q5" value="a"> 60</label><br>
-      <label><input type="radio" name="q5" value="b"> 600</label><br>
-      <label><input type="radio" name="q5" value="c"> 6</label>
-    </div>
-
-    <button type="button" onclick="checkAnswers()">Submit</button>
-    <div id="score"></div>
-  </form>
-
-  <script>
-    function checkAnswers() {
-      let score = 0;
-      const answers = {
-        q1: 'b',
-        q2: 'a',
-        q3: 'a',
-        q4: 'a',
-        q5: 'a'
-      };
-
-      for (let q in answers) {
-        const selected = document.querySelector('input[name=' + q + ']:checked');
-        if (selected && selected.value === answers[q]) {
-          score++;
-        }
-      }
-
-      document.getElementById("score").innerText = "You scored " + score + " out of 5!";
-    }
-  </script>
-</body>
-</html>
-
- <section id="grade5quiz">
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Grade 5 Arithmetic Quiz</title>
-  <style>
-    body {
-      background-color: #fff3e0;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 30px;
-      text-align: center;
-    }
-    h1 {
-      color: #ef6c00;
-    }
-    .question {
-      background: #ffffff;
-      border: 2px solid #ffb74d;
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 600px;
-      text-align: left;
-    }
-    input[type="radio"] {
-      margin: 10px;
-    }
-    button {
-      background-color: #fb8c00;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-    button:hover {
-      background-color: #e65100;
-    }
-    #score {
-      font-size: 20px;
-      color: #2e7d32;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Grade 5 Arithmetic Quiz</h1>
-
-  <form id="quizForm">
-    <div class="question">
-      <p>1. What is the LCM of 12 and 18?</p>
-      <label><input type="radio" name="q1" value="a"> 36</label><br>
-      <label><input type="radio" name="q1" value="b"> 24</label><br>
-      <label><input type="radio" name="q1" value="c"> 6</label>
-    </div>
-
-    <div class="question">
-      <p>2. Simplify: (48 ÷ 4) + (5 × 2)</p>
-      <label><input type="radio" name="q2" value="a"> 22</label><br>
-      <label><input type="radio" name="q2" value="b"> 23</label><br>
-      <label><input type="radio" name="q2" value="c"> 21</label>
-    </div>
-
-    <div class="question">
-      <p>3. What is 35% of 200?</p>
-      <label><input type="radio" name="q3" value="a"> 65</label><br>
-      <label><input type="radio" name="q3" value="b"> 70</label><br>
-      <label><input type="radio" name="q3" value="c"> 75</label>
-    </div>
-
-    <div class="question">
-      <p>4. What is the value of 6² + 4²?</p>
-      <label><input type="radio" name="q4" value="a"> 52</label><br>
-      <label><input type="radio" name="q4" value="b"> 50</label><br>
-      <label><input type="radio" name="q4" value="c"> 48</label>
-    </div>
-
-    <div class="question">
-      <p>5. Round 4867 to the nearest hundred:</p>
-      <label><input type="radio" name="q5" value="a"> 4900</label><br>
-      <label><input type="radio" name="q5" value="b"> 4800</label><br>
-      <label><input type="radio" name="q5" value="c"> 5000</label>
-    </div>
-
-    <button type="button" onclick="checkAnswers()">Submit</button>
-    <div id="score"></div>
-  </form>
-
-  <script>
-    function checkAnswers() {
-      let score = 0;
-      const answers = {
-        q1: 'a',
-        q2: 'c',
-        q3: 'b',
-        q4: 'a',
-        q5: 'a'
-      };
-
-      for (let q in answers) {
-        const selected = document.querySelector('input[name=' + q + ']:checked');
-        if (selected && selected.value === answers[q]) {
-          score++;
-        }
-      }
-
-      document.getElementById("score").innerText = "You scored " + score + " out of 5!";
-    }
-  </script>
-</body>
-</html>
-
-<section id="grade6quiz">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Grade 6 Arithmetic Quiz</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f6f9;
-      padding: 20px;
-    }
-    .quiz-container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    .question {
-      margin: 20px 0;
-    }
-    .question p {
-      font-weight: bold;
-    }
-    label {
-      display: block;
-      margin-left: 20px;
-      margin-bottom: 5px;
-    }
-    button {
-      background-color: #3498db;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: green;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="quiz-container">
-    <h1>Grade 6 Arithmetic Quiz (MCQs)</h1>
-    <form id="quizForm">
-
-      <div class="question">
-        <p>1. What is the value of 7 × (4 + 2)?</p>
-        <label><input type="radio" name="q1" value="42"> 42</label>
-        <label><input type="radio" name="q1" value="28"> 28</label>
-        <label><input type="radio" name="q1" value="46"> 46</label>
-        <label><input type="radio" name="q1" value="48"> 48</label>
-      </div>
-
-      <div class="question">
-        <p>2. Find the LCM of 6 and 8.</p>
-        <label><input type="radio" name="q2" value="24"> 24</label>
-        <label><input type="radio" name="q2" value="14"> 14</label>
-        <label><input type="radio" name="q2" value="48"> 48</label>
-        <label><input type="radio" name="q2" value="18"> 18</label>
-      </div>
-
-      <div class="question">
-        <p>3. If 35 ÷ 7 = 5, what is 7 × 5?</p>
-        <label><input type="radio" name="q3" value="40"> 40</label>
-        <label><input type="radio" name="q3" value="35"> 35</label>
-        <label><input type="radio" name="q3" value="25"> 25</label>
-        <label><input type="radio" name="q3" value="30"> 30</label>
-      </div>
-
-      <div class="question">
-        <p>4. Which of these numbers is a prime number?</p>
-        <label><input type="radio" name="q4" value="21"> 21</label>
-        <label><input type="radio" name="q4" value="17"> 17</label>
-        <label><input type="radio" name="q4" value="27"> 27</label>
-        <label><input type="radio" name="q4" value="49"> 49</label>
-      </div>
-
-      <div class="question">
-        <p>5. What is the area of a square with side 9 cm?</p>
-        <label><input type="radio" name="q5" value="81"> 81 cm²</label>
-        <label><input type="radio" name="q5" value="18"> 18 cm²</label>
-        <label><input type="radio" name="q5" value="72"> 72 cm²</label>
-        <label><input type="radio" name="q5" value="90"> 90 cm²</label>
-      </div>
-
-      <button type="button" onclick="checkAnswers()">Submit</button>
-    </form>
-    <div id="result"></div>
-  </div>
-
-  <script>
-    function checkAnswers() {
-      const answers = {
-        q1: "42",
-        q2: "24",
-        q3: "35",
-        q4: "17",
-        q5: "81"
-      };
-
-      let score = 0;
-      for (let key in answers) {
-        const selected = document.querySelector('input[name="' + key + '"]:checked');
-        if (selected && selected.value === answers[key]) {
-          score++;
-        }
-      }
-
-      document.getElementById("result").innerText = "You scored " + score + " out of 5!";
-    }
-  </script>
-</body>
-</html>
-
-<section id="grade7quiz">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 7 Arithmetic Quiz – Test Your Skills!</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fefae0;
-      padding: 20px;
-      margin: 0;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      color: #283618;
-      margin-bottom: 30px;
-    }
-    .quiz-container {
-      max-width: 700px;
-      margin: auto;
-      background-color: #d8f3dc;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .question h3 {
-      margin-bottom: 10px;
-    }
-    input[type="radio"] {
-      margin-right: 10px;
-    }
-    #submit {
-      background-color: #606c38;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 18px;
-      color: #2a9d8f;
-    }
-  </style>
-</head>
-<body>
-  <div class="quiz-container">
-    <h1>Grade 7 Arithmetic Quiz – Test Your Skills!</h1>
-
-    <form id="quizForm">
-      <div class="question">
-        <h3>1. What is the value of 7² - 3²?</h3>
-        <label><input type="radio" name="q1" value="a"> 40</label><br />
-        <label><input type="radio" name="q1" value="b"> 49</label><br />
-        <label><input type="radio" name="q1" value="c"> 16</label><br />
-        <label><input type="radio" name="q1" value="d"> 30</label>
-      </div>
-
-      <div class="question">
-        <h3>2. What is the reciprocal of 5/8?</h3>
-        <label><input type="radio" name="q2" value="a"> 8/5</label><br />
-        <label><input type="radio" name="q2" value="b"> -5/8</label><br />
-        <label><input type="radio" name="q2" value="c"> 13/8</label><br />
-        <label><input type="radio" name="q2" value="d"> 3/5</label>
-      </div>
-
-      <div class="question">
-        <h3>3. Find the value of: (2 + 3) × 4</h3>
-        <label><input type="radio" name="q3" value="a"> 20</label><br />
-        <label><input type="radio" name="q3" value="b"> 14</label><br />
-        <label><input type="radio" name="q3" value="c"> 24</label><br />
-        <label><input type="radio" name="q3" value="d"> 10</label>
-      </div>
-
-      <div class="question">
-        <h3>4. What is 25% of 160?</h3>
-        <label><input type="radio" name="q4" value="a"> 40</label><br />
-        <label><input type="radio" name="q4" value="b"> 35</label><br />
-        <label><input type="radio" name="q4" value="c"> 45</label><br />
-        <label><input type="radio" name="q4" value="d"> 32</label>
-      </div>
-
-      <div class="question">
-        <h3>5. If 12 pens cost ₹144, what is the cost of 5 pens?</h3>
-        <label><input type="radio" name="q5" value="a"> ₹50</label><br />
-        <label><input type="radio" name="q5" value="b"> ₹60</label><br />
-        <label><input type="radio" name="q5" value="c"> ₹70</label><br />
-        <label><input type="radio" name="q5" value="d"> ₹72</label>
-      </div>
-
-      <button type="button" id="submit" onclick="calculateScore()">Submit</button>
-    </form>
-
-    <div id="result"></div>
-  </div>
-
-  <script>
-    function calculateScore() {
-      const answers = {
-        q1: "a",
-        q2: "a",
-        q3: "a",
-        q4: "a",
-        q5: "d"
-      };
-      let score = 0;
-
-      for (let key in answers) {
-        const selected = document.querySelector(`input[name="${key}"]:checked`);
-        if (selected && selected.value === answers[key]) {
-          score++;
-        }
-      }
-
-      document.getElementById("result").innerText = `Your score: ${score} out of 5`;
-    }
-  </script>
-</body>
-</html>
-
-<section id="grade8quiz">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 8 Arithmetic Quiz – Challenge Your Brain!</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f9f9ff;
-      padding: 20px;
-      margin: 0;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      color: #1d3557;
-      margin-bottom: 30px;
-    }
-    .quiz-container {
-      max-width: 700px;
-      margin: auto;
-      background-color: #e0f7fa;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .question h3 {
-      margin-bottom: 10px;
-    }
-    input[type="radio"] {
-      margin-right: 10px;
-    }
-    #submit {
-      background-color: #0077b6;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 18px;
-      color: #2e7d32;
-    }
-  </style>
-</head>
-<body>
-  <div class="quiz-container">
-    <h1>Grade 8 Arithmetic Quiz – Challenge Your Brain!</h1>
-
-    <form id="quizForm">
-      <div class="question">
-        <h3>1. Simplify: (4x - 3)²</h3>
-        <label><input type="radio" name="q1" value="a"> 16x² - 24x + 9</label><br />
-        <label><input type="radio" name="q1" value="b"> 16x² - 9</label><br />
-        <label><input type="radio" name="q1" value="c"> 4x² - 9</label><br />
-        <label><input type="radio" name="q1" value="d"> None of these</label>
-      </div>
-
-      <div class="question">
-        <h3>2. If the ratio of boys to girls is 3:5, what percent of the class are girls?</h3>
-        <label><input type="radio" name="q2" value="a"> 60%</label><br />
-        <label><input type="radio" name="q2" value="b"> 62.5%</label><br />
-        <label><input type="radio" name="q2" value="c"> 40%</label><br />
-        <label><input type="radio" name="q2" value="d"> 70%</label>
-      </div>
-
-      <div class="question">
-        <h3>3. Solve: 3/4 + 2/3 = ?</h3>
-        <label><input type="radio" name="q3" value="a"> 17/12</label><br />
-        <label><input type="radio" name="q3" value="b"> 6/7</label><br />
-        <label><input type="radio" name="q3" value="c"> 5/7</label><br />
-        <label><input type="radio" name="q3" value="d"> 11/12</label>
-      </div>
-
-      <div class="question">
-        <h3>4. A number is increased by 20% and then decreased by 20%. What is the net change?</h3>
-        <label><input type="radio" name="q4" value="a"> No change</label><br />
-        <label><input type="radio" name="q4" value="b"> Increase 4%</label><br />
-        <label><input type="radio" name="q4" value="c"> Decrease 4%</label><br />
-        <label><input type="radio" name="q4" value="d"> Increase 20%</label>
-      </div>
-
-      <div class="question">
-        <h3>5. The square root of 324 is:</h3>
-        <label><input type="radio" name="q5" value="a"> 18</label><br />
-        <label><input type="radio" name="q5" value="b"> 17</label><br />
-        <label><input type="radio" name="q5" value="c"> 19</label><br />
-        <label><input type="radio" name="q5" value="d"> 16</label>
-      </div>
-
-      <button type="button" id="submit" onclick="calculateScore()">Submit</button>
-    </form>
-
-    <div id="result"></div>
-  </div>
-
-  <script>
-    function calculateScore() {
-      const answers = {
-        q1: "a",
-        q2: "b",
-        q3: "a",
-        q4: "c",
-        q5: "a"
-      };
-      let score = 0;
-
-      for (let key in answers) {
-        const selected = document.querySelector(`input[name="${key}"]:checked`);
-        if (selected && selected.value === answers[key]) {
-          score++;
-        }
-      }
-
-      document.getElementById("result").innerText = `Your score: ${score} out of 5`;
-    }
-  </script>
-</body>
-</html>
-
-<section id="grade9quiz">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 9 Arithmetic Quiz – Test Your Logical Power!</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f2f2f2;
-      padding: 20px;
-      margin: 0;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      color: #2b2d42;
-      margin-bottom: 30px;
-    }
-    .quiz-container {
-      max-width: 700px;
-      margin: auto;
-      background-color: #ffffff;
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .question h3 {
-      margin-bottom: 10px;
-    }
-    input[type="radio"] {
-      margin-right: 8px;
-    }
-    #submit {
-      background-color: #0077b6;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-      font-size: 18px;
-      color: #007f5f;
-    }
-  </style>
-</head>
-<body>
-  <div class="quiz-container">
-    <h1>Grade 9 Arithmetic Quiz – Test Your Logical Power!</h1>
-
-    <form id="quizForm">
-      <div class="question">
-        <h3>1. If x² + 5x + 6 = 0, what are the roots of the equation?</h3>
-        <label><input type="radio" name="q1" value="a"> x = -2, x = -3</label><br />
-        <label><input type="radio" name="q1" value="b"> x = 2, x = 3</label><br />
-        <label><input type="radio" name="q1" value="c"> x = -1, x = -6</label><br />
-        <label><input type="radio" name="q1" value="d"> x = 1, x = 6</label>
-      </div>
-
-      <div class="question">
-        <h3>2. Evaluate: (3² × 2³) ÷ 6</h3>
-        <label><input type="radio" name="q2" value="a"> 8</label><br />
-        <label><input type="radio" name="q2" value="b"> 6</label><br />
-        <label><input type="radio" name="q2" value="c"> 12</label><br />
-        <label><input type="radio" name="q2" value="d"> 9</label>
-      </div>
-
-      <div class="question">
-        <h3>3. A man’s salary is increased by 10% and then decreased by 10%. What is the net change?</h3>
-        <label><input type="radio" name="q3" value="a"> Increase by 1%</label><br />
-        <label><input type="radio" name="q3" value="b"> No change</label><br />
-        <label><input type="radio" name="q3" value="c"> Decrease by 1%</label><br />
-        <label><input type="radio" name="q3" value="d"> Decrease by 10%</label>
-      </div>
-
-      <div class="question">
-        <h3>4. If √x = 7, what is the value of x + √x?</h3>
-        <label><input type="radio" name="q4" value="a"> 56</label><br />
-        <label><input type="radio" name="q4" value="b"> 57</label><br />
-        <label><input type="radio" name="q4" value="c"> 49</label><br />
-        <label><input type="radio" name="q4" value="d"> 14</label>
-      </div>
-
-      <div class="question">
-        <h3>5. Simplify: (2x + 3)(2x - 3)</h3>
-        <label><input type="radio" name="q5" value="a"> 4x² + 9</label><br />
-        <label><input type="radio" name="q5" value="b"> 4x² - 9</label><br />
-        <label><input type="radio" name="q5" value="c"> 4x² + 6x - 9</label><br />
-        <label><input type="radio" name="q5" value="d"> 4x² - 6x - 9</label>
-      </div>
-
-      <button type="button" id="submit" onclick="calculateScore()">Submit</button>
-    </form>
-
-    <div id="result"></div>
-  </div>
-
-  <script>
-    function calculateScore() {
-      const answers = {
-        q1: "a",
-        q2: "b",
-        q3: "c",
-        q4: "b",
-        q5: "b"
-      };
-      let score = 0;
-
-      for (let key in answers) {
-        const selected = document.querySelector(`input[name="${key}"]:checked`);
-        if (selected && selected.value === answers[key]) {
-          score++;
-        }
-      }
-
-      document.getElementById("result").innerText = `Your score: ${score} out of 5`;
-    }
-  </script>
-</body>
-</html>
-
-<section id="grade10quiz">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grade 10 Arithmetic Quiz</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #fef6e4;
-      color: #333;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      border: 2px solid #ffcb77;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #ffc300;
-    }
-    h1 {
-      text-align: center;
-      color: #ff6f61;
-    }
-    .question {
-      margin: 20px 0;
-    }
-    .question label {
-      display: block;
-      margin: 5px 0;
-    }
-    button {
-      background-color: #ff6f61;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      margin-top: 20px;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-    #result {
-      margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>Grade 10 Arithmetic Quiz – Final Boss Level!</h1>
-  <form id="quizForm">
-    <div class="question">
-      <p>1. If x² – 9x + 20 = 0, what are the roots?</p>
-      <label><input type="radio" name="q1" value="a"> x = 4 or x = 5</label>
-      <label><input type="radio" name="q1" value="b"> x = 2 or x = 10</label>
-      <label><input type="radio" name="q1" value="c"> x = -4 or x = -5</label>
-      <label><input type="radio" name="q1" value="d"> x = 3 or x = 6</label>
-    </div>
-
-    <div class="question">
-      <p>2. Evaluate: (2/3) ÷ (4/9)</p>
-      <label><input type="radio" name="q2" value="a"> 3/2</label>
-      <label><input type="radio" name="q2" value="b"> 2/3</label>
-      <label><input type="radio" name="q2" value="c"> 9/8</label>
-      <label><input type="radio" name="q2" value="d"> 3/4</label>
-    </div>
-
-    <div class="question">
-      <p>3. Simplify: (x - 2)(x + 2)</p>
-      <label><input type="radio" name="q3" value="a"> x² - 4</label>
-      <label><input type="radio" name="q3" value="b"> x² + 4</label>
-      <label><input type="radio" name="q3" value="c"> x² - 2</label>
-      <label><input type="radio" name="q3" value="d"> x² + 2</label>
-    </div>
-
-    <div class="question">
-      <p>4. A train travels 120 km in 2 hours. What is its speed in m/s?</p>
-      <label><input type="radio" name="q4" value="a"> 16.67 m/s</label>
-      <label><input type="radio" name="q4" value="b"> 60 m/s</label>
-      <label><input type="radio" name="q4" value="c"> 30 m/s</label>
-      <label><input type="radio" name="q4" value="d"> 40 m/s</label>
-    </div>
-
-    <div class="question">
-      <p>5. The sum of interior angles of a hexagon is:</p>
-      <label><input type="radio" name="q5" value="a"> 720°</label>
-      <label><input type="radio" name="q5" value="b"> 540°</label>
-      <label><input type="radio" name="q5" value="c"> 600°</label>
-      <label><input type="radio" name="q5" value="d"> 900°</label>
-    </div>
-
-    <button type="button" onclick="checkAnswers()">Submit</button>
-    <div id="result"></div>
-  </form>
-
-  <script>
-    function checkAnswers() {
-      const answers = {
-        q1: "a",
-        q2: "a",
-        q3: "a",
-        q4: "a",
-        q5: "a"
-      };
-      let score = 0;
-      for (let q in answers) {
-        const selected = document.querySelector(`input[name="${q}"]:checked`);
-        if (selected && selected.value === answers[q]) {
-          score++;
-        }
-      }
-      document.getElementById("result").innerText =
-        "Your score is " + score + " out of 5.";
-    }
-  </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mealting Maths – Feedback</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fef6e4;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #ff6f3c;
-    }
-    iframe {
-      width: 100%;
-      height: 900px;
-      border: none;
-      border-radius: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>We Value Your Feedback!</h1>
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSf8zt6PB5Fz2ZlhWNwRFdu_ED9dGMgbzNrli7twqx-nB0AlVA/viewform?embedded=true" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0"
-      loading="lazy">
-      Loading…
-    </iframe>
-  </div>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About Us - Mealting Maths</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff8e7;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #e67e22;
-            text-align: center;
-        }
-        h2 {
-            color: #3498db;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .highlight {
-            color: #2ecc71;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>About Us</h1>
-        <h2>✨ Meet the Founder</h2>
-        <p>
-            Hi! I'm <span class="highlight">Laksh Agarwal</span>, a Grade 7 student from <span class="highlight">India</span>. I’m the founder of <strong>Mealting Maths</strong> — a free educational website built especially for students from <strong>Grade 1 to 10</strong>. I created this platform because I truly believe that maths doesn’t have to be scary or boring. With colorful quizzes and simple design, learning numbers can actually be fun!
-        </p>
-        <p>
-            I started <strong>Mealting Maths</strong> to give students across India and beyond a place to practice arithmetic in a joyful, stress-free way — and totally free of cost. I enjoy coding, creating websites, and helping friends understand difficult topics.
-        </p>
-        <p>
-            My dream is to become a successful <span class="highlight">entrepreneur</span> one day — someone who builds things that make learning and life easier for everyone. <em>Mealting Maths</em> is my first step toward that dream.
-        </p>
-        <p><strong>Let’s melt the fear of maths — together!</strong></p>
-    </div>
-</body>
-</html>
-
