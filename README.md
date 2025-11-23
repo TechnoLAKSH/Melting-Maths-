@@ -13,18 +13,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Select Grade | Arithmetic Quiz</title>
-  <style>
-    body {
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melting Maths - Quiz Selector</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
+ 
       margin: 0;
       padding: 0;
       background: #f7faff;
