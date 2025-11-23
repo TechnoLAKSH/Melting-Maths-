@@ -503,3 +503,23 @@
 
 </body>
 </html>
+
+
+<a href="https://technolaksh.github.io/google-quiz.html/google-quiz.html" 
+   style="
+        display: inline-block;
+        padding: 15px 30px;
+        background: #ff9800;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-family: 'Comic Sans MS';
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+        transition: 0.3s;
+   "
+   onmouseover="this.style.transform='scale(1.1)'"
+   onmouseout="this.style.transform='scale(1)'">
+   ✨ Start Google Quiz ✨
+</a>
+
