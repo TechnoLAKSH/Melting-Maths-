@@ -678,3 +678,13 @@
     }
 </script>
 </a>
+
+
+
+
+
+<h2 style="text-align:center; font-weight:bold; color:#ff4500; font-family:Comic Sans MS;">
+    WELCOME TO SECTION 2 OF THIS PAGE – GOOGLE QUIZ
+</h2>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbSAqK77g_vHiUtSAMlk3mDO5h8outsBMOYkyg-1kW99Y9zA/viewform?embedded=true" width="640" height="3209" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
