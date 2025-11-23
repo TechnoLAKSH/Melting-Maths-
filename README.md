@@ -504,11 +504,177 @@
 </body>
 </html>
 
+<!-- Chatbot Section -->
+<style>
+    /* Chatbot Floating Button */
+    #chatbot-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ffcb05;
+        color: black;
+        padding: 15px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        border: 3px solid #ff6f6f;
+        box-shadow: 0 0 10px #ff6f6f;
+        animation: bounce 1.5s infinite;
+    }
 
-<a href="https://technolaksh.github.io/google-quiz/google-quiz.html" 
-   style="display:inline-block; padding:12px 20px; background:#ff9800; 
-          color:white; text-decoration:none; font-size:20px; 
-          border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2); 
-          font-weight:bold;">
-   ▶️ Take the Google Quiz
+    /* Bounce animation */
+    @keyframes bounce {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* Chat window */
+    #chatbot-window {
+        width: 320px;
+        height: 420px;
+        background: white;
+        border-radius: 15px;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        border: 4px solid #ff6f6f;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    #chat-header {
+        background: #ffcb05;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 3px solid #ff6f6f;
+    }
+
+    #chat-body {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        font-size: 15px;
+    }
+
+    .bot-msg {
+        background: #ffe5e5;
+        padding: 8px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+    }
+
+    .user-msg {
+        background: #d7efff;
+        padding: 8px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        text-align: right;
+    }
+
+    #chat-input-area {
+        display: flex;
+        border-top: 2px solid #ddd;
+    }
+
+    #chat-input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+    }
+
+    #send-btn {
+        padding: 10px;
+        background: #ff6f6f;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<div id="chatbot-btn">🤖 Chat with Shinchan!</div>
+
+<div id="chatbot-window">
+    <div id="chat-header">Shinchan AI Helper</div>
+    <div id="chat-body">
+        <div class="bot-msg">Hi! I'm Shinchan! Ask me maths or anything fun 😁</div>
+    </div>
+
+    <div id="chat-input-area">
+        <input id="chat-input" type="text" placeholder="Type your message...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<script>
+    // Open / Close Chatbot
+    document.getElementById("chatbot-btn").onclick = () => {
+        const win = document.getElementById("chatbot-window");
+        win.style.display = (win.style.display === "flex") ? "none" : "flex";
+    };
+
+    // Send Message
+    document.getElementById("send-btn").onclick = sendMessage;
+    document.getElementById("chat-input").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") sendMessage();
+    });
+
+    function sendMessage() {
+        let input = document.getElementById("chat-input");
+        let msg = input.value.trim();
+        if (msg === "") return;
+
+        addUser(msg);
+        input.value = "";
+
+        setTimeout(() => {
+            addBot(botReply(msg));
+        }, 400);
+    }
+
+    // Add user message
+    function addUser(text) {
+        let body = document.getElementById("chat-body");
+        body.innerHTML += `<div class="user-msg">${text}</div>`;
+        body.scrollTop = body.scrollHeight;
+    }
+
+    // Add bot message
+    function addBot(text) {
+        let body = document.getElementById("chat-body");
+        body.innerHTML += `<div class="bot-msg">${text}</div>`;
+        body.scrollTop = body.scrollHeight;
+    }
+
+    // Simple AI logic
+    function botReply(message) {
+        message = message.toLowerCase();
+
+        // Math solving
+        try {
+            if (message.includes("+") || message.includes("-") ||
+                message.includes("*") || message.includes("/")) {
+                let ans = eval(message);
+                return "Hehe! 🤓 The answer is: " + ans;
+            }
+        } catch { }
+
+        // Custom replies
+        if (message.includes("hi") || message.includes("hello"))
+            return "Hiiii! I'm Shinchan! 😆";
+
+        if (message.includes("your name"))
+            return "I'm Shinchan, your math helper!";
+
+        if (message.includes("bye"))
+            return "Bye bye! See you soon! 👋";
+
+        return "Ooops! I didn’t understand 😅 Ask me maths!";
+    }
+</script>
 </a>
