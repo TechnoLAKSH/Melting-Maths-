@@ -505,7 +505,7 @@
 </html>
 
 
-<a href="https://technolaksh.github.io/google-quiz.html/google-quiz.html" 
+<a href= https://technolaksh.github.io/google-quiz/google-quiz.html
    style="
         display: inline-block;
         padding: 15px 30px;
