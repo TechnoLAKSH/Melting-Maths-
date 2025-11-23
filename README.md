@@ -683,6 +683,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h2 style="text-align:center; font-weight:bold; color:#ff4500; font-family:Comic Sans MS;">
     WELCOME TO SECTION 2 OF THIS PAGE – GOOGLE QUIZ
 </h2>
