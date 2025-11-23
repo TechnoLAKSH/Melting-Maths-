@@ -505,21 +505,10 @@
 </html>
 
 
-<a href= https://technolaksh.github.io/google-quiz/google-quiz.html
-   style="
-        display: inline-block;
-        padding: 15px 30px;
-        background: #ff9800;
-        color: white;
-        font-size: 20px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-family: 'Comic Sans MS';
-        box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-        transition: 0.3s;
-   "
-   onmouseover="this.style.transform='scale(1.1)'"
-   onmouseout="this.style.transform='scale(1)'">
-   ✨ Start Google Quiz ✨
+<a href="https://technolaksh.github.io/google-quiz/google-quiz.html" 
+   style="display:inline-block; padding:12px 20px; background:#ff9800; 
+          color:white; text-decoration:none; font-size:20px; 
+          border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2); 
+          font-weight:bold;">
+   ▶️ Take the Google Quiz
 </a>
-
