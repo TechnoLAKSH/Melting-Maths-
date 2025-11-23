@@ -183,121 +183,153 @@
 </body>
 </html>
 
-<section id="grade2quiz">
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grade 2 Arithmetic Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melting Maths - Quiz Selector</title>
   <style>
     body {
-      background-color: #e0f7fa;
-      font-family: 'Verdana', sans-serif;
-      padding: 30px;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7faff;
     }
-    h1 {
-      color: #00796b;
-    }
-    .question {
-      background: #ffffff;
-      border: 2px solid #4db6ac;
+    header {
+      background: #4CAF50;
       padding: 20px;
-      margin: 20px auto;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 600px;
-      text-align: left;
+      text-align: center;
+      color: white;
     }
-    input[type="radio"] {
+    section {
+      padding: 50px;
+      border-bottom: 2px solid #ddd;
+    }
+    h2 {
+      color: #2d2d86;
+    }
+    select, button {
+      font-size: 18px;
+      padding: 10px;
       margin: 10px;
     }
     button {
-      background-color: #00796b;
+      background-color: #4CAF50;
       color: white;
-      padding: 10px 20px;
       border: none;
-      border-radius: 6px;
-      font-size: 16px;
       cursor: pointer;
-      margin-top: 20px;
     }
     button:hover {
-      background-color: #004d40;
-    }
-    #score {
-      font-size: 20px;
-      color: #1b5e20;
-      margin-top: 20px;
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <h1>Grade 2 Arithmetic Quiz</h1>
 
-  <form id="quizForm">
-    <div class="question">
-      <p>1. What is 24 + 13?</p>
-      <label><input type="radio" name="q1" value="a"> 37</label><br>
-      <label><input type="radio" name="q1" value="b"> 36</label><br>
-      <label><input type="radio" name="q1" value="c"> 38</label>
-    </div>
+  <!-- Grade Selector -->
+  <header>
+    <h1>Welcome to Melting Maths 🎉</h1>
+    <p>Select your grade to jump directly to your quiz 👇</p>
+    <select id="gradeSelector">
+      <option value="">-- Select Grade --</option>
+      <option value="grade1quiz">Grade 1</option>
+      <option value="grade2quiz">Grade 2</option>
+      <option value="grade3quiz">Grade 3</option>
+      <option value="grade4quiz">Grade 4</option>
+      <option value="grade5quiz">Grade 5</option>
+      <option value="grade6quiz">Grade 6</option>
+      <option value="grade7quiz">Grade 7</option>
+      <option value="grade8quiz">Grade 8</option>
+      <option value="grade9quiz">Grade 9</option>
+      <option value="grade10quiz">Grade 10</option>
+    </select>
+    <button onclick="goToGrade()">Go 🚀</button>
+  </header>
 
-    <div class="question">
-      <p>2. What is the value of the digit 5 in 452?</p>
-      <label><input type="radio" name="q2" value="a"> 500</label><br>
-      <label><input type="radio" name="q2" value="b"> 50</label><br>
-      <label><input type="radio" name="q2" value="c"> 5</label>
-    </div>
+  <!-- Example Quiz Sections -->
+  <section id="grade1quiz">
+    <h2>Grade 1 Arithmetic Quiz</h2>
+    <p>Q1: 2 + 3 = ?</p>
+    <p>Q2: 5 - 2 = ?</p>
+  </section>
 
-    <div class="question">
-      <p>3. Which number is greater?</p>
-      <label><input type="radio" name="q3" value="a"> 98</label><br>
-      <label><input type="radio" name="q3" value="b"> 89</label><br>
-      <label><input type="radio" name="q3" value="c"> 88</label>
-    </div>
+  <!-- FULL GRADE 2 QUIZ HERE -->
+  <section id="grade2quiz">
+    <h2>Grade 2 Arithmetic Quiz</h2>
+    <form id="quiz2">
+      <p>Q1: What is 15 ÷ 3?</p>
+      <input type="radio" name="q1" value="3"> 3<br>
+      <input type="radio" name="q1" value="5"> 5<br>
+      <input type="radio" name="q1" value="7"> 7<br>
 
-    <div class="question">
-      <p>4. What is 100 - 57?</p>
-      <label><input type="radio" name="q4" value="a"> 53</label><br>
-      <label><input type="radio" name="q4" value="b"> 43</label><br>
-      <label><input type="radio" name="q4" value="c"> 47</label>
-    </div>
+      <p>Q2: Solve: 20 - 8 = ?</p>
+      <input type="radio" name="q2" value="10"> 10<br>
+      <input type="radio" name="q2" value="12"> 12<br>
+      <input type="radio" name="q2" value="14"> 14<br>
 
-    <div class="question">
-      <p>5. Which number comes next: 10, 20, 30, ___?</p>
-      <label><input type="radio" name="q5" value="a"> 35</label><br>
-      <label><input type="radio" name="q5" value="b"> 40</label><br>
-      <label><input type="radio" name="q5" value="c"> 50</label>
-    </div>
+      <p>Q3: What is 6 × 5?</p>
+      <input type="radio" name="q3" value="25"> 25<br>
+      <input type="radio" name="q3" value="30"> 30<br>
+      <input type="radio" name="q3" value="35"> 35<br>
 
-    <button type="button" onclick="checkAnswers()">Submit</button>
-    <div id="score"></div>
-  </form>
+      <p>Q4: Simplify: 50 ÷ 10 = ?</p>
+      <input type="radio" name="q4" value="4"> 4<br>
+      <input type="radio" name="q4" value="5"> 5<br>
+      <input type="radio" name="q4" value="6"> 6<br>
+
+      <p>Q5: What is the sum of 18 + 12?</p>
+      <input type="radio" name="q5" value="28"> 28<br>
+      <input type="radio" name="q5" value="30"> 30<br>
+      <input type="radio" name="q5" value="32"> 32<br>
+
+      <br>
+      <button type="button" onclick="checkGrade2()">Submit</button>
+    </form>
+    <p id="result2"></p>
+  </section>
+
+  <section id="grade3quiz">
+    <h2>Grade 3 Arithmetic Quiz</h2>
+    <p>Q1: 12 × 3 = ?</p>
+    <p>Q2: 45 ÷ 5 = ?</p>
+  </section>
 
   <script>
-    function checkAnswers() {
+    function goToGrade() {
+      const grade = document.getElementById("gradeSelector").value;
+      if (grade) {
+        document.getElementById(grade).scrollIntoView({ behavior: "smooth" });
+      } else {
+        alert("Please select a grade!");
+      }
+    }
+
+    function checkGrade2() {
       let score = 0;
       const answers = {
-        q1: 'a',
-        q2: 'b',
-        q3: 'a',
-        q4: 'b',
-        q5: 'b'
+        q1: "5",
+        q2: "12",
+        q3: "30",
+        q4: "5",
+        q5: "30"
       };
 
       for (let q in answers) {
-        const selected = document.querySelector('input[name=' + q + ']:checked');
+        const selected = document.querySelector(`input[name=${q}]:checked`);
         if (selected && selected.value === answers[q]) {
           score++;
         }
       }
 
-      document.getElementById("score").innerText = "You scored " + score + " out of 5!";
+      document.getElementById("result2").innerText =
+        "Your score: " + score + "/5";
     }
   </script>
+
 </body>
 </html>
+
 
 <section id="grade3quiz">
 <!DOCTYPE html>
